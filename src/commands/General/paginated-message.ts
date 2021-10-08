@@ -18,7 +18,8 @@ export class UserCommand extends Command {
 			template: new MessageEmbed()
 				.setColor('#FF0000')
 				// Be sure to add a space so this is offset from the page numbers!
-				.setFooter(' footer after page numbers')
+				.setFooter(' footer after page numbers'),
+			paginatedMessagePayloadData: { content: null }
 		});
 
 		paginatedMessage
@@ -29,7 +30,7 @@ export class UserCommand extends Command {
 			)
 			.addPageBuilder((builder) =>
 				builder //
-					.setContent('This is the second page')
+					.setContent('This is the second page - content works here')
 					.setEmbeds([new MessageEmbed().setTimestamp()])
 			);
 
