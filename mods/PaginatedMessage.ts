@@ -1,6 +1,6 @@
 import { Time } from '@sapphire/time-utilities';
 import { Awaitable, isFunction } from '@sapphire/utilities';
-import type { RESTPostAPIChannelMessageJSONBody } from 'discord-api-types/v9';
+import type { RESTPatchAPIChannelMessageJSONBody, RESTPostAPIChannelMessageJSONBody } from 'discord-api-types/v9';
 import {
 	Collection,
 	Message,
@@ -13,7 +13,6 @@ import {
 	Snowflake,
 	User
 } from 'discord.js';
-import type { RawMessagePayloadData } from 'discord.js/typings/rawDataTypes';
 import { MessageBuilder } from '../builders/MessageBuilder';
 import { isGuildBasedChannel } from '../type-guards';
 
@@ -156,7 +155,7 @@ export class PaginatedMessage {
 	 *
 	 * @default null
 	 */
-	private paginatedMessagePayloadData: RawMessagePayloadData | null = null;
+	private paginatedMessagePayloadData: RESTPostAPIChannelMessageJSONBody | RESTPatchAPIChannelMessageJSONBody | null = null;
 
 	/**
 	 * Constructor for the {@link PaginatedMessage} class
@@ -1028,7 +1027,7 @@ export interface PaginatedMessageOptions {
 	 *
 	 * @default null
 	 */
-	paginatedMessagePayloadData?: RawMessagePayloadData | null;
+	paginatedMessagePayloadData?: RESTPostAPIChannelMessageJSONBody | RESTPatchAPIChannelMessageJSONBody | null;
 }
 
 /**
