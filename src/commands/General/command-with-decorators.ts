@@ -11,7 +11,7 @@ import { Message, MessageEmbed } from 'discord.js';
 export class UserCommand extends SubCommandPluginCommand {
 	// Anyone should be able to view the result, but not modify
 	public async show(message: Message) {
-		return message.channel.send('Showing!');
+		return send(message, 'Showing!');
 	}
 
 	@RequiresClientPermissions('EMBED_LINKS') // This sub-command requires the bot to have EMBED_LINKS permission because it sends a MessageEmbed
@@ -22,16 +22,16 @@ export class UserCommand extends SubCommandPluginCommand {
 			.setTitle('Configuration Log')
 			.setTimestamp();
 
-		return message.channel.send({ embeds: [embed] });
+		return send(message, { embeds: [embed] });
 	}
 
 	@RequiresGuildContext((message: Message) => send(message, 'This sub-command can only be used in servers'))
 	public async remove(message: Message) {
-		return message.channel.send('Removing!');
+		return send(message, 'Removing!');
 	}
 
 	@RequiresDMContext((message: Message) => send(message, 'This sub-command can only be used in DMs'))
 	public async reset(message: Message) {
-		return message.channel.send('Resetting!');
+		return send(message, 'Resetting!');
 	}
 }

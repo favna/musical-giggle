@@ -6,9 +6,9 @@ import type { Message } from 'discord.js';
 	description: 'ping pong'
 })
 export class UserCommand extends Command {
-	public async run(_message: Message, args: Args) {
-        const result = await args.pickResult('guildCategoryChannel');
+	public async messageRun(_message: Message, args: Args) {
+		const result = await args.pickResult('guildCategoryChannel');
 
-        return console.log(result);
+		return console.log(result);
 	}
 }

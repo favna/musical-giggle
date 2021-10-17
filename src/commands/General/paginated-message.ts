@@ -11,7 +11,7 @@ import { MessageEmbed } from 'discord.js';
 	generateDashLessAliases: true
 })
 export class UserCommand extends Command {
-	public async run(message: Message) {
+	public async messageRun(message: Message) {
 		const response = await send(message, { content: 'loading...' });
 
 		const paginatedMessage = new PaginatedMessage({
