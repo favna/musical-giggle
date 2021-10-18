@@ -1,9 +1,9 @@
 import { ApplyOptions } from '@sapphire/decorators';
-import { PaginatedMessage } from '@sapphire/discord.js-utilities';
 import { Command, CommandOptions } from '@sapphire/framework';
-import { send } from '@sapphire/plugin-editable-commands';
 import type { Message } from 'discord.js';
 import { MessageEmbed } from 'discord.js';
+import { PaginatedMessage } from '../../lib/PaginatedMessage';
+import { sendLoadingMessage } from '../../lib/utils';
 
 @ApplyOptions<CommandOptions>({
 	aliases: ['pm'],
@@ -12,14 +12,13 @@ import { MessageEmbed } from 'discord.js';
 })
 export class UserCommand extends Command {
 	public async messageRun(message: Message) {
-		const response = await send(message, { content: 'loading...' });
+		const response = await sendLoadingMessage(message);
 
 		const paginatedMessage = new PaginatedMessage({
 			template: new MessageEmbed()
 				.setColor('#FF0000')
 				// Be sure to add a space so this is offset from the page numbers!
-				.setFooter(' footer after page numbers'),
-			paginatedMessagePayloadData: { content: null }
+				.setFooter(' footer after page numbers')
 		});
 
 		paginatedMessage
@@ -28,11 +27,24 @@ export class UserCommand extends Command {
 					.setDescription('This is the first page')
 					.setTitle('Page 1')
 			)
-			.addPageBuilder((builder) =>
-				builder //
-					.setContent('This is the second page - content works here')
-					.setEmbeds([new MessageEmbed().setTimestamp()])
-			);
+			.addPageEmbed((embed) =>
+				embed //
+					.setDescription('This is the second page')
+					.setTitle('Page 2')
+			)
+			.addPageEmbed((embed) =>
+				embed //
+					.setDescription('This is the third page')
+					.setTitle('Page 3')
+			)
+			.addPageEmbeds((embed1, embed2) => [
+				embed1 //
+					.setDescription('This is the fourth page - embed 1')
+					.setTitle('Page 4.1'),
+				embed2 //
+					.setDescription('This is the fourth page - embed 2')
+					.setTitle('Page 4.2')
+			]);
 
 		await paginatedMessage.run(response, message.author);
 		return response;

@@ -49,8 +49,6 @@
 	},
 	"packageManager": "yarn@3.0.2",
 	"resolutions": {
-		"discord.js": "^13.2.0",
-		"@sapphire/framework": "portal:/F:/dev/sapphiredev/framework",
-		"@sapphire/pieces": "portal:/F:/dev/sapphiredev/pieces"
+		"discord-api-types": "^0.23.1"
 	}
 }
