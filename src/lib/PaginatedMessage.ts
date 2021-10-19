@@ -1,6 +1,6 @@
 import { MessageBuilder } from '@sapphire/discord.js-utilities';
 import { Time } from '@sapphire/time-utilities';
-import { Awaitable, chunk, isFunction, isNullish, isObject } from '@sapphire/utilities';
+import { Awaitable, chunk, isFunction, isObject } from '@sapphire/utilities';
 import type { APIEmbed } from 'discord-api-types/v9';
 import {
 	ButtonInteraction,
@@ -11,6 +11,7 @@ import {
 	Message,
 	MessageActionRow,
 	MessageButton,
+	MessageComponentInteraction,
 	MessageEmbed,
 	MessageEmbedOptions,
 	MessageOptions,
@@ -24,11 +25,11 @@ import type { MessageComponentTypes } from 'discord.js/typings/enums';
  * This is a {@link PaginatedMessage}, a utility to paginate messages (usually embeds).
  * You must either use this class directly or extend it.
  *
- * {@link PaginatedMessage} uses MessageComponent buttons, that when clicked perform the specified action.
- * You can utilize your own actions, or you can use the {@link PaginatedMessage.defaultActions}.
+ * {@link PaginatedMessage} uses {@linkplain https://discord.js.org/#/docs/main/stable/typedef/MessageComponent MessageComponent} buttons that perform the specified action when clicked.
+ * You can either use your own actions or the {@link PaginatedMessage.defaultActions}.
  * {@link PaginatedMessage.defaultActions} is also static so you can modify these directly.
  *
- * {@link PaginatedMessage} also uses pages, these are simply {@linkplain https://discord.js.org/#/docs/main/stable/class/Message Messages}.
+ * {@link PaginatedMessage} also uses pages via {@linkplain https://discord.js.org/#/docs/main/stable/class/Message Messages}.
  *
  * @example
  * ```typescript
@@ -157,7 +158,7 @@ export class PaginatedMessage {
 	 *
 	 * @default null
 	 */
-	private paginatedMessageData: MessageOptionsUnion | null = null;
+	private paginatedMessageData: Omit<MessageOptionsUnion, 'components'> | null = null;
 
 	/**
 	 * Constructor for the {@link PaginatedMessage} class
@@ -174,7 +175,9 @@ export class PaginatedMessage {
 		this.pages = pages ?? [];
 
 		for (const page of this.pages) {
-			this.messages.push(isObject(page) && !isNullish(page) ? page : null);
+			if (isFunction(page) || isObject(page)) {
+				this.messages.push(page);
+			}
 		}
 
 		for (const action of actions ?? this.constructor.defaultActions) {
@@ -268,7 +271,11 @@ export class PaginatedMessage {
 	 */
 	public addPage(page: MessagePage): this {
 		this.pages.push(page);
-		this.messages.push(page instanceof Message ? page : null);
+
+		if (isFunction(page) || isObject(page)) {
+			this.messages.push(page);
+		}
+
 		return this;
 	}
 
@@ -682,16 +689,7 @@ export class PaginatedMessage {
 		// Merge in the advanced options
 		page = { ...page, ...(this.paginatedMessageData ?? {}) };
 
-		const messageComponents = [...this.actions.values()].map<MessageButton>(
-			(button) =>
-				new MessageButton({
-					customId: button.customId,
-					style: button.style,
-					label: button.label,
-					type: 'BUTTON',
-					emoji: button.emoji
-				})
-		);
+		const messageComponents = Array.from(this.actions.values()).map<MessageButton>((button) => new MessageButton(button));
 
 		const rowChunkedComponents = chunk(messageComponents, 5);
 		const actionRows = rowChunkedComponents.map((components) => new MessageActionRow().setComponents(components));
@@ -705,7 +703,7 @@ export class PaginatedMessage {
 	/**
 	 * Sets up the message's collector.
 	 * @param channel The channel the handler is running at.
-	 * @param targetUser The author the handler is for.
+	 * @param targetUser The user the handler is for.
 	 */
 	protected setUpCollector(channel: Message['channel'], targetUser: User): void {
 		if (this.pages.length > 1) {
@@ -732,9 +730,9 @@ export class PaginatedMessage {
 
 	/**
 	 * Handles the `collect` event from the collector.
-	 * @param targetUser The the handler is for.
+	 * @param targetUser The user the handler is for.
 	 * @param channel The channel the handler is running at.
-	 * @param interaction The button interaction that was received
+	 * @param interaction The button interaction that was received.
 	 */
 	protected async handleCollect(targetUser: User, channel: Message['channel'], interaction: ButtonInteraction): Promise<void> {
 		if (interaction.user.id === targetUser.id) {
@@ -761,11 +759,13 @@ export class PaginatedMessage {
 				}
 			}
 		} else {
-			await interaction.reply({
-				content: PaginatedMessage.wrongUserMessage(targetUser, interaction.user),
-				ephemeral: true,
-				allowedMentions: { users: [], roles: [] }
-			});
+			const interactionReplyOptions = PaginatedMessage.wrongUserInteractionReply(targetUser, interaction.user);
+
+			if (isObject(interactionReplyOptions)) {
+				await interaction.reply(interactionReplyOptions);
+			} else {
+				await interaction.reply({ content: interactionReplyOptions, ephemeral: true, allowedMentions: { users: [], roles: [] } });
+			}
 		}
 	}
 
@@ -779,7 +779,7 @@ export class PaginatedMessage {
 
 		// Do not remove reactions if the message, channel, or guild, was deleted:
 		if (this.response && !PaginatedMessage.deletionStopReasons.includes(reason)) {
-			this.response?.edit({ components: [] });
+			void this.response?.edit({ components: [] });
 		}
 	}
 
@@ -982,24 +982,60 @@ export class PaginatedMessage {
 	public static readonly handlers = new Map<string, PaginatedMessage>();
 
 	/**
-	 * Custom message that will be sent whenever a user other than the specified target user interacts with one of the buttons.
-	 * This message is send as an ephemeral message so only the user that is pressing the buttons can see it.
-	 * The ephemeral message is send with all `allowedMentions` disables, so you do not have to worry about accidentally pinging any users or roles.
+	 * A generator for {@link MessageComponentInteraction#reply} that will be called and sent whenever an untargeted user interacts with one of the buttons.
+	 * When modifying this it is recommended that the message is set to be ephemeral so only the user that is pressing the buttons can see them.
+	 * Furthermore, we also recommend setting `allowedMentions: { users: [], roles: [] }`, so you don't have to worry about accidentally pinging anyone.
 	 *
-	 * @param targetUser A parameter of {@link User} representing for whom this {@link PaginatedMessage} actually is.
-	 * @param interactionUser A parameter of {@link User} representing the person who clicked the button.
-	 * @default `Please stop clicking the buttons on this message. They are only for ${Formatters.userMention(targetUser.id)}.`
+	 * When setting just a string, we will add `{ ephemeral: true, allowedMentions: { users: [], roles: [] } }` for you.
+	 *
+	 * @param targetUser The {@link User} this {@link PaginatedMessage} was intended for.
+	 * @param interactionUser The {@link User} that actually clicked the button.
+	 * @default
+	 * ```ts
+	 * {
+	 * 	content: `Please stop clicking the buttons on this message. They are only for ${Formatters.userMention(targetUser.id)}.`,
+	 * 	ephemeral: true,
+	 * 	allowedMentions: { users: [], roles: [] }
+	 * }
+	 * ```
 	 * @remark To overwrite this property change it in a "setup" file prior to calling `client.login()` for your bot.
 	 * @example
 	 * ```typescript
 	 * import { PaginatedMessage } from '@sapphire/discord.js-utilities';
 	 *
-	 * PaginatedMessage.wrongUserMessage = (targetUser) =>
+	 * PaginatedMessage.wrongUserInteractionReply = (targetUser) =>
 	 *     `These buttons are only for ${Formatters.userMention(targetUser.id)}. Press them as much as you want, but I won't do anything with your clicks.`;
 	 * ```
+	 *
+	 * @example
+	 * ```typescript
+	 * import { PaginatedMessage } from '@sapphire/discord.js-utilities';
+	 *
+	 * // We  will add ephemeral and no allowed mention for string only overwrites
+	 * PaginatedMessage.wrongUserInteractionReply = (targetUser) =>
+	 *     `These buttons are only for ${Formatters.userMention(targetUser.id)}. Press them as much as you want, but I won't do anything with your clicks.`;
+	 * ```
+	 *
+	 * @example
+	 * ```typescript
+	 * import { PaginatedMessage } from '@sapphire/discord.js-utilities';
+	 *
+	 * PaginatedMessage.wrongUserInteractionReply = (targetUser) => ({
+	 * 	content: `These buttons are only for ${Formatters.userMention(
+	 * 		targetUser.id
+	 * 	)}. Press them as much as you want, but I won't do anything with your clicks.`,
+	 * 	ephemeral: true,
+	 * 	allowedMentions: { users: [], roles: [] }
+	 * });
+	 * ```
 	 */
-	public static wrongUserMessage: (targetUser: User, interactionUser: User) => string = (targetUser: User) =>
-		`Please stop clicking the buttons on this message. They are only for ${Formatters.userMention(targetUser.id)}.`;
+	public static wrongUserInteractionReply: (targetUser: User, interactionUser: User) => Parameters<MessageComponentInteraction['reply']>[0] = (
+		targetUser: User
+	) => ({
+		content: `Please stop clicking the buttons on this message. They are only for ${Formatters.userMention(targetUser.id)}.`,
+		ephemeral: true,
+		allowedMentions: { users: [], roles: [] }
+	});
 
 	private static resolveTemplate(template?: MessageEmbed | MessageOptions): MessageOptions {
 		if (template === undefined) return {};
@@ -1079,7 +1115,7 @@ export interface PaginatedMessageOptions {
 	 *
 	 * @default null
 	 */
-	paginatedMessageData?: MessageOptionsUnion | null;
+	paginatedMessageData?: Omit<MessageOptionsUnion, 'components'> | null;
 }
 
 /**
