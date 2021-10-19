@@ -151,14 +151,10 @@ export class PaginatedMessage {
 	 */
 	public embedFooterSeparator = PaginatedMessage.embedFooterSeparator;
 
-	/**
-	 * Additional options that are applied to each message when sending it to Discord.
-	 * Be careful with using this, misusing it can cause issues, such as sending empty messages.
-	 * @remark **This is for advanced usages only!**
-	 *
-	 * @default null
-	 */
 	private paginatedMessageData: Omit<MessageOptionsUnion, 'components'> | null = null;
+
+	private wrongUserInteractionReply: (targetUser: User, interactionUser: User) => Parameters<MessageComponentInteraction['reply']>[0] =
+		PaginatedMessage.wrongUserInteractionReply;
 
 	/**
 	 * Constructor for the {@link PaginatedMessage} class
@@ -190,8 +186,25 @@ export class PaginatedMessage {
 		this.paginatedMessageData = paginatedMessageData;
 	}
 
-	public setPromptMessage(message: string) {
-		PaginatedMessage.promptMessage = message;
+	/**
+	 * Sets the {@link PaginatedMessage.promptMessage}.
+	 * This will apply to all instance of {@link PaginatedMessage}
+	 * @param promptMessage The new `promptMessage` to set
+	 * @returns The current instance of {@link PaginatedMessage}
+	 */
+	public setPromptMessage(promptMessage: PromptMessageFunction) {
+		PaginatedMessage.promptMessage = promptMessage;
+		return this;
+	}
+
+	/**
+	 * Sets the {@link PaginatedMessage.wrongUserInteractionReply} for this instance of {@link PaginatedMessage}.
+	 * This will only apply to this one instance and no others.
+	 * @param wrongUserInteractionReply The new `wrongUserInteractionReply` to set
+	 * @returns The current instance of {@link PaginatedMessage}
+	 */
+	public setWrongUserInteractionReply(wrongUserInteractionReply: WrongUserInteractionReplyFunction) {
+		this.wrongUserInteractionReply = wrongUserInteractionReply;
 		return this;
 	}
 
@@ -748,24 +761,23 @@ export class PaginatedMessage {
 				collector: this.collector!
 			});
 
-			if (previousIndex !== this.index) {
-				const messagePage = await this.resolvePage(this.index);
-				const updateOptions = isFunction(messagePage) ? await messagePage(this.index, this.pages, this) : messagePage;
+			const newIndex = previousIndex === this.index ? previousIndex : this.index;
+			const messagePage = await this.resolvePage(newIndex);
+			const updateOptions = isFunction(messagePage) ? await messagePage(newIndex, this.pages, this) : messagePage;
 
-				if (interaction.replied || interaction.deferred) {
-					await interaction.editReply(updateOptions);
-				} else {
-					await interaction.update(updateOptions);
-				}
+			if (interaction.replied || interaction.deferred) {
+				await interaction.editReply(updateOptions);
+			} else {
+				await interaction.update(updateOptions);
 			}
 		} else {
-			const interactionReplyOptions = PaginatedMessage.wrongUserInteractionReply(targetUser, interaction.user);
+			const interactionReplyOptions = this.wrongUserInteractionReply(targetUser, interaction.user);
 
-			if (isObject(interactionReplyOptions)) {
-				await interaction.reply(interactionReplyOptions);
-			} else {
-				await interaction.reply({ content: interactionReplyOptions, ephemeral: true, allowedMentions: { users: [], roles: [] } });
-			}
+			await interaction.reply(
+				isObject(interactionReplyOptions)
+					? interactionReplyOptions
+					: { content: interactionReplyOptions, ephemeral: true, allowedMentions: { users: [], roles: [] } }
+			);
 		}
 	}
 
@@ -849,7 +861,12 @@ export class PaginatedMessage {
 			emoji: '🔢',
 			run: async ({ handler, author, channel, interaction }) => {
 				await interaction.deferUpdate();
-				await interaction.followUp({ content: PaginatedMessage.promptMessage, ephemeral: true });
+
+				const promptMessage = PaginatedMessage.promptMessage(interaction.user);
+
+				await interaction.followUp(
+					isObject(promptMessage) ? promptMessage : { content: promptMessage, ephemeral: true, allowedMentions: { users: [], roles: [] } }
+				);
 
 				const collected = await channel
 					.awaitMessages({
@@ -921,19 +938,6 @@ export class PaginatedMessage {
 	public static deletionStopReasons = ['messageDelete', 'channelDelete', 'guildDelete'];
 
 	/**
-	 * Custom prompt message when a user wants to jump to a certain page number.
-	 * @default "What page would you like to jump to?"
-	 * @remark To overwrite this property change it in a "setup" file prior to calling `client.login()` for your bot.
-	 * @example
-	 * ```typescript
-	 * import { PaginatedMessage } from '@sapphire/discord.js-utilities';
-	 *
-	 * PaginatedMessage.promptMessage = 'Please send the number of the page you would like to jump to.';
-	 * ```
-	 */
-	public static promptMessage = 'What page would you like to jump to?';
-
-	/**
 	 * Custom text to show in front of the page index in the embed footer.
 	 * PaginatedMessage will automatically add a space (` `) after the given text. You do not have to add it yourself.
 	 * @default ""
@@ -982,6 +986,51 @@ export class PaginatedMessage {
 	public static readonly handlers = new Map<string, PaginatedMessage>();
 
 	/**
+	 * A generator for {@link MessageComponentInteraction#followUp} that will be called and sent whenever the user presses the 🔢 button, prompting them to sent their page of choice.
+	 * When modifying this it is recommended that the message is set to be ephemeral so only the user that is pressing the buttons can see them.
+	 * Furthermore, we also recommend setting `allowedMentions: { users: [], roles: [] }`, so you don't have to worry about accidentally pinging anyone.
+	 *
+	 * When setting just a string, we will add `{ ephemeral: true, allowedMentions: { users: [], roles: [] } }` for you.
+	 *
+	 * @param interactionUser The {@link User} that clicked the button.
+	 * @default
+	 * ```ts
+	 * {
+	 * 	content: `What page would you like to jump to?`,
+	 * 	ephemeral: true,
+	 * 	allowedMentions: { users: [], roles: [] }
+	 * }
+	 * ```
+	 * @remark To overwrite this property change it in a "setup" file prior to calling `client.login()` for your bot.
+	 *
+	 * @example
+	 * ```typescript
+	 * import { PaginatedMessage } from '@sapphire/discord.js-utilities';
+	 *
+	 * // We  will add ephemeral and no allowed mention for string only overwrites
+	 * PaginatedMessage.promptMessage = (interactionUser) =>
+	 *     `Please send the number of the page you would like to jump to.`;
+	 * ```
+	 *
+	 * @example
+	 * ```typescript
+	 * import { PaginatedMessage } from '@sapphire/discord.js-utilities';
+	 * import { Formatters } from 'discord.js';
+	 *
+	 * PaginatedMessage.promptMessage = (interactionUser) => ({
+	 * 	content: `${Formatters.userMention(interactionUser.id)}, please tell me which page you want to jump to.`,
+	 * 	ephemeral: true,
+	 * 	allowedMentions: { users: [], roles: [] }
+	 * });
+	 * ```
+	 */
+	public static promptMessage: PromptMessageFunction = () => ({
+		content: 'What page would you like to jump to?',
+		ephemeral: true,
+		allowedMentions: { users: [], roles: [] }
+	});
+
+	/**
 	 * A generator for {@link MessageComponentInteraction#reply} that will be called and sent whenever an untargeted user interacts with one of the buttons.
 	 * When modifying this it is recommended that the message is set to be ephemeral so only the user that is pressing the buttons can see them.
 	 * Furthermore, we also recommend setting `allowedMentions: { users: [], roles: [] }`, so you don't have to worry about accidentally pinging anyone.
@@ -999,13 +1048,6 @@ export class PaginatedMessage {
 	 * }
 	 * ```
 	 * @remark To overwrite this property change it in a "setup" file prior to calling `client.login()` for your bot.
-	 * @example
-	 * ```typescript
-	 * import { PaginatedMessage } from '@sapphire/discord.js-utilities';
-	 *
-	 * PaginatedMessage.wrongUserInteractionReply = (targetUser) =>
-	 *     `These buttons are only for ${Formatters.userMention(targetUser.id)}. Press them as much as you want, but I won't do anything with your clicks.`;
-	 * ```
 	 *
 	 * @example
 	 * ```typescript
@@ -1019,6 +1061,7 @@ export class PaginatedMessage {
 	 * @example
 	 * ```typescript
 	 * import { PaginatedMessage } from '@sapphire/discord.js-utilities';
+	 * import { Formatters } from 'discord.js';
 	 *
 	 * PaginatedMessage.wrongUserInteractionReply = (targetUser) => ({
 	 * 	content: `These buttons are only for ${Formatters.userMention(
@@ -1029,9 +1072,7 @@ export class PaginatedMessage {
 	 * });
 	 * ```
 	 */
-	public static wrongUserInteractionReply: (targetUser: User, interactionUser: User) => Parameters<MessageComponentInteraction['reply']>[0] = (
-		targetUser: User
-	) => ({
+	public static wrongUserInteractionReply: WrongUserInteractionReplyFunction = (targetUser: User) => ({
 		content: `Please stop clicking the buttons on this message. They are only for ${Formatters.userMention(targetUser.id)}.`,
 		ephemeral: true,
 		allowedMentions: { users: [], roles: [] }
@@ -1135,6 +1176,16 @@ export interface PaginatedMessageOptions {
  * on the provided pages and we can only guarantee this will work properly when using the utility methods.
  */
 export type MessagePage = ((index: number, pages: MessagePage[], handler: PaginatedMessage) => Awaitable<MessageOptionsUnion>) | MessageOptionsUnion;
+
+/**
+ * The type of the custom function that can be set for the {@link PaginatedMessage.promptMessage}
+ */
+export type PromptMessageFunction = (interactionUser: User) => Parameters<MessageComponentInteraction['reply']>[0];
+
+/**
+ * The type of the custom function that can be set for the {@link PaginatedMessage.wrongUserInteractionReply}
+ */
+export type WrongUserInteractionReplyFunction = (targetUser: User, interactionUser: User) => Parameters<MessageComponentInteraction['reply']>[0];
 
 type EmbedResolvable = MessageOptions['embeds'];
 
