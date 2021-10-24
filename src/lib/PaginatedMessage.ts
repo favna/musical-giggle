@@ -5,6 +5,7 @@ import type { APIEmbed } from 'discord-api-types/v9';
 import {
 	ButtonInteraction,
 	Collection,
+	Constants,
 	Formatters,
 	InteractionButtonOptions,
 	InteractionCollector,
@@ -722,7 +723,8 @@ export class PaginatedMessage {
 		if (this.pages.length > 1) {
 			this.collector = this.response!.createMessageComponentCollector<MessageComponentTypes.BUTTON>({
 				filter: (interaction) => this.actions.has(interaction.customId),
-				idle: this.idle
+				idle: this.idle,
+				componentType: Constants.MessageComponentTypes.BUTTON
 			})
 				.on('collect', this.handleCollect.bind(this, targetUser, channel))
 				.on('end', this.handleEnd.bind(this));
