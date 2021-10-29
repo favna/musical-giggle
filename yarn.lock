@@ -19,9 +19,9 @@ __metadata:
   linkType: hard
 
 "@discordjs/collection@npm:^0.2.1":
-  version: 0.2.1
-  resolution: "@discordjs/collection@npm:0.2.1"
-  checksum: e68d4bbf83b03bc18c7648d0f5c5669d1f1a394596bc2fcbb907284cff65657b28dbf165a1b8ccae20b6bc0726bc8a0a276d8adba8f9413502bb19d61b98598f
+  version: 0.2.4
+  resolution: "@discordjs/collection@npm:0.2.4"
+  checksum: 3333b65b742a876e0fe09faaff1aa5052873a68f15d47baaee39b59364d888e01f12fd04296ab1badb41af87f624bc75eaafa2d6753fdc9c5bf280667f4cb3c2
   languageName: node
   linkType: hard
 
@@ -114,16 +114,28 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@sapphire/discord.js-utilities@portal:/F:/dev/sapphiredev/utilities/packages/discord.js-utilities::locator=with-typescript-recommended%40workspace%3A.":
-  version: 0.0.0-use.local
-  resolution: "@sapphire/discord.js-utilities@portal:/F:/dev/sapphiredev/utilities/packages/discord.js-utilities::locator=with-typescript-recommended%40workspace%3A."
+"@sapphire/discord.js-utilities@npm:^3.2.2":
+  version: 3.2.2
+  resolution: "@sapphire/discord.js-utilities@npm:3.2.2"
+  dependencies:
+    "@sapphire/discord-utilities": ^2.2.2
+    "@sapphire/time-utilities": ^1.4.4
+    "@sapphire/utilities": ^3.0.4
+  checksum: 34338727587a306fe476493d86f39aa56552d97f156ea0fee10c8ca756061b91a2bb6888a1154c8ce3b0e476ef52560f6fa078ba61e91df36577346bd6dce53b
+  languageName: node
+  linkType: hard
+
+"@sapphire/discord.js-utilities@npm:^4.0.1":
+  version: 4.0.1
+  resolution: "@sapphire/discord.js-utilities@npm:4.0.1"
   dependencies:
     "@sapphire/discord-utilities": ^2.2.2
     "@sapphire/time-utilities": ^1.4.6
     "@sapphire/utilities": ^3.0.6
     tslib: ^2.3.1
+  checksum: d1565813bbae5a87f9acd2e2e505c13ec507327c0a633890b5c367d08f9d221cc721cab3e64110adb077705b69c917a55c211fed6500a8a6a55e14be8385193b
   languageName: node
-  linkType: soft
+  linkType: hard
 
 "@sapphire/fetch@npm:^2.0.2":
   version: 2.0.2
@@ -214,24 +226,15 @@ __metadata:
   linkType: hard
 
 "@sapphire/ratelimits@npm:^2.1.4":
-  version: 2.1.5
-  resolution: "@sapphire/ratelimits@npm:2.1.5"
+  version: 2.1.6
+  resolution: "@sapphire/ratelimits@npm:2.1.6"
   dependencies:
-    "@sapphire/time-utilities": ^1.4.5
-  checksum: 28784f4bd8bfedd741b0b61b5acf29f1aabc3b12df539cfff3158e9fbc1332b30a6b46c8dda9c158ba86e6057fdcdf4cea953295252d8cfb537d9171186e747f
+    "@sapphire/time-utilities": ^1.4.6
+  checksum: a627d66ae1361d978afa1c3b1d255eaabb711cf940c5d687987ae93393f5f9c1fb695c6ebaf81f5bb1dc249611dc815b42b6dbc9d1cf14497cebfe14ca24a0d1
   languageName: node
   linkType: hard
 
-"@sapphire/time-utilities@npm:^1.4.4, @sapphire/time-utilities@npm:^1.4.5":
-  version: 1.4.5
-  resolution: "@sapphire/time-utilities@npm:1.4.5"
-  dependencies:
-    "@sapphire/utilities": ^3.0.5
-  checksum: 1825dbf3463c945be253bfde2fae456fa9724830d575a990026d6a8afe72e5b5643e71b647f4a0d6ccabb58fbc16204659a18901e0acf86f80a15a287633f428
-  languageName: node
-  linkType: hard
-
-"@sapphire/time-utilities@npm:^1.4.6":
+"@sapphire/time-utilities@npm:^1.4.4, @sapphire/time-utilities@npm:^1.4.6":
   version: 1.4.6
   resolution: "@sapphire/time-utilities@npm:1.4.6"
   dependencies:
@@ -261,11 +264,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@sapphire/utilities@portal:/F:/dev/sapphiredev/utilities/packages/utilities::locator=with-typescript-recommended%40workspace%3A.":
-  version: 0.0.0-use.local
-  resolution: "@sapphire/utilities@portal:/F:/dev/sapphiredev/utilities/packages/utilities::locator=with-typescript-recommended%40workspace%3A."
+"@sapphire/utilities@npm:^3.0.3, @sapphire/utilities@npm:^3.0.4, @sapphire/utilities@npm:^3.0.6":
+  version: 3.0.6
+  resolution: "@sapphire/utilities@npm:3.0.6"
+  checksum: cfe4dd76ec27521cf85931a2a2fd4f8d82387667090ba61bbe985dd9a4ed55b0abd5767bf2538479d31a135ed2051b96f941732d7ef39ce23815e4f147c37037
   languageName: node
-  linkType: soft
+  linkType: hard
 
 "@sindresorhus/is@npm:^4.0.1":
   version: 4.2.0

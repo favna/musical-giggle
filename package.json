@@ -50,8 +50,6 @@
 	},
 	"packageManager": "yarn@3.0.2",
 	"resolutions": {
-		"discord-api-types": "^0.23.1",
-		"@sapphire/discord.js-utilities": "portal:/F:/dev/sapphiredev/utilities/packages/discord.js-utilities",
-		"@sapphire/utilities": "portal:/F:/dev/sapphiredev/utilities/packages/utilities"
+		"discord-api-types": "^0.23.1"
 	}
 }
