@@ -2,7 +2,7 @@
 # Manual changes might be lost - proceed with caution!
 
 __metadata:
-  version: 4
+  version: 5
   cacheKey: 8
 
 "@discordjs/builders@npm:^0.8.1":
@@ -741,9 +741,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"discord.js@npm:^13.3.0":
-  version: 13.3.0
-  resolution: "discord.js@npm:13.3.0"
+"discord.js@npm:^13.3.1":
+  version: 13.3.1
+  resolution: "discord.js@npm:13.3.1"
   dependencies:
     "@discordjs/builders": ^0.8.1
     "@discordjs/collection": ^0.3.2
@@ -754,7 +754,7 @@ __metadata:
     discord-api-types: ^0.24.0
     node-fetch: ^2.6.1
     ws: ^8.2.3
-  checksum: 67aaa3b60e59a1400d514e694ed7a930b4d7abee7f06fc8e79a3a195ca0b5e67ba6086f96e0e9fcff7d9686081b79db2165f254609bd966790e9e266e43f472a
+  checksum: 944f03467063bde6be095f6953c9feea252aa37569c6776c59b964956d9643741bb561f1036ee7dedf385954567dce8a3cd3069772c6739de178dea0c4392bfb
   languageName: node
   linkType: hard
 
@@ -2124,11 +2124,11 @@ resolve@^1.10.0:
 
 "resolve@patch:resolve@^1.10.0#~builtin<compat/resolve>":
   version: 1.20.0
-  resolution: "resolve@patch:resolve@npm%3A1.20.0#~builtin<compat/resolve>::version=1.20.0&hash=00b1ff"
+  resolution: "resolve@patch:resolve@npm%3A1.20.0#~builtin<compat/resolve>::version=1.20.0&hash=07638b"
   dependencies:
     is-core-module: ^2.2.0
     path-parse: ^1.0.6
-  checksum: bed00be983cd20a8af0e7840664f655c4b269786dbd9595c5f156cd9d8a0050e65cdbbbdafc30ee9b6245b230c78a2c8ab6447a52545b582f476c29adb188cc5
+  checksum: a0dd7d16a8e47af23afa9386df2dff10e3e0debb2c7299a42e581d9d9b04d7ad5d2c53f24f1e043f7b3c250cbdc71150063e53d0b6559683d37f790b7c8c3cd5
   languageName: node
   linkType: hard
 
@@ -2585,11 +2585,11 @@ typescript@^4.4.4:
 
 "typescript@patch:typescript@^4.4.4#~builtin<compat/typescript>":
   version: 4.4.4
-  resolution: "typescript@patch:typescript@npm%3A4.4.4#~builtin<compat/typescript>::version=4.4.4&hash=32657b"
+  resolution: "typescript@patch:typescript@npm%3A4.4.4#~builtin<compat/typescript>::version=4.4.4&hash=ddd1e8"
   bin:
     tsc: bin/tsc
     tsserver: bin/tsserver
-  checksum: c97c33903f1eb4f9e178649befdfc859d93157db1eccd1e521e84976ec6861db53412d8018e5e4c5d09268771c65498d42caa64bd881878346c3644f6b7cd202
+  checksum: bd629ad0da4a15d79aaad56baf3ee7d96f6a181760d430ae77f8c5325df7bffd9edee57544a3970e3651e8b796fe03a5838a7eb39c6d46cc3866c0b23d36a0dd
   languageName: node
   linkType: hard
 
@@ -2729,7 +2729,7 @@ typescript@^4.4.4:
     "@sapphire/utilities": ^3.0.6
     "@types/node": ^16.11.6
     "@types/ws": ^8.2.0
-    discord.js: ^13.3.0
+    discord.js: ^13.3.1
     dotenv-cra: ^3.0.2
     lodash: ^4.17.21
     npm-run-all: ^4.1.5
