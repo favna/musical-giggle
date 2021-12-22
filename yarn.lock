@@ -175,27 +175,27 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@sapphire/plugin-api@npm:^3.1.1":
-  version: 3.1.1
-  resolution: "@sapphire/plugin-api@npm:3.1.1"
+"@sapphire/plugin-api@npm:^3.1.2":
+  version: 3.1.2
+  resolution: "@sapphire/plugin-api@npm:3.1.2"
   dependencies:
     "@types/node-fetch": 2.5.12
     "@types/psl": ^1.1.0
-    "@types/ws": ^8.2.1
+    "@types/ws": ^8.2.2
     node-fetch: 2.6.6
     psl: ^1.8.0
     tslib: ^2.3.1
-  checksum: 0d2f1a0f23c5486f4a5c9df2921f3ea7d02b53545989d9b84aa190bce035823bc8ca9574875e9c3fb6ecd7e5507ec412774cf4d63a0e86c9c156b8c368815963
+  checksum: a53636948a3d05d277a15a927c89d41c4c7d35efe0d018b0eb7fc037aa996ee3ac324910956ca9b21ca050469dfad18204732d98bf73d536b977f15107e51213
   languageName: node
   linkType: hard
 
-"@sapphire/plugin-editable-commands@npm:^1.1.1":
-  version: 1.1.1
-  resolution: "@sapphire/plugin-editable-commands@npm:1.1.1"
+"@sapphire/plugin-editable-commands@npm:^1.1.2":
+  version: 1.1.2
+  resolution: "@sapphire/plugin-editable-commands@npm:1.1.2"
   dependencies:
     "@skyra/editable-commands": ^2.1.1
     tslib: ^2.3.1
-  checksum: e50e6ca2a18c03b16366b863e866f3e6f1712dda9dd0cca0fe4bab1152d6562ad53ed59d2ddbede685a377003e6a1049df8500c184ae9811b7ff25f75695942d
+  checksum: cf685ded6fa92faab21c5a9b1eda0bde5adde73b89a73abeaaabdc351276ae90d725189e1fcb9a9b800d17d28f1ac036b28eae467ce37dd5b539f21aaafaafff
   languageName: node
   linkType: hard
 
@@ -210,12 +210,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@sapphire/plugin-subcommands@npm:^2.1.2":
-  version: 2.1.2
-  resolution: "@sapphire/plugin-subcommands@npm:2.1.2"
+"@sapphire/plugin-subcommands@npm:^2.1.3":
+  version: 2.1.3
+  resolution: "@sapphire/plugin-subcommands@npm:2.1.3"
   dependencies:
     tslib: ^2.3.1
-  checksum: 344ba2d7171b6c274e07382445450affeb3140749caf33fccf477fb273b253bce4af4d20e1cdabae3213a1703b7944cbdae16727ba5d048f5de0f2a95027850f
+  checksum: b5743e8cdb296f80c824ddbcc01c5467f7a06854f61b3105bfe62fd82cc58004b4fca59d2b89da88873b17918a964f7cbcd6ec352c5c3c4d22dcc73c5a713720
   languageName: node
   linkType: hard
 
@@ -319,10 +319,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:^16.11.14":
-  version: 16.11.14
-  resolution: "@types/node@npm:16.11.14"
-  checksum: 0bd4333fb4e56532db7f5174732268b18089913ddbb0e97957228e64f9fe3babf9923c77ce6f07d3d354445cfbb8d31b95c1f8be3c0f7426308bd8b93d3aaa02
+"@types/node@npm:^17.0.2":
+  version: 17.0.2
+  resolution: "@types/node@npm:17.0.2"
+  checksum: a827d2542ef7adba5c79ba7f85b7c2ba8256d317bd99d77ed7af237cfebae0034dff5c4182e1845e6fbef29ae4c78186c4b4a7dbf236037a04120783aa30ba74
   languageName: node
   linkType: hard
 
@@ -342,7 +342,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/ws@npm:^8.2.1, @types/ws@npm:^8.2.2":
+"@types/ws@npm:^8.2.2":
   version: 8.2.2
   resolution: "@types/ws@npm:8.2.2"
   dependencies:
@@ -1465,13 +1465,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"lodash@npm:^4.17.21":
-  version: 4.17.21
-  resolution: "lodash@npm:4.17.21"
-  checksum: eb835a2e51d381e561e508ce932ea50a8e5a68f4ebdd771ea240d3048244a8d13658acbd502cd4829768c56f2e16bdd4340b9ea141297d472517b83868e677f7
-  languageName: node
-  linkType: hard
-
 "lru-cache@npm:^6.0.0":
   version: 6.0.0
   resolution: "lru-cache@npm:6.0.0"
@@ -2026,9 +2019,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"pretty-quick@npm:^3.1.2":
-  version: 3.1.2
-  resolution: "pretty-quick@npm:3.1.2"
+"pretty-quick@npm:^3.1.3":
+  version: 3.1.3
+  resolution: "pretty-quick@npm:3.1.3"
   dependencies:
     chalk: ^3.0.0
     execa: ^4.0.0
@@ -2040,7 +2033,7 @@ __metadata:
     prettier: ">=2.0.0"
   bin:
     pretty-quick: bin/pretty-quick.js
-  checksum: c4b0de1829c63dfb1c2cb509892410fdba8fd2490b5ef9e1b34c418bc83f9205a7b6559fbf5e349d638e9c0ad1416fb35581d0e3eef2d45ee7093fb0838eaadd
+  checksum: 28bdc32571e6308e049497f58a9245f272275973782b6ed7fbcf98937101cc605a81b3ab48629dba4687b7e86c87a3733febacdc0746ca4da5d1c80a0b88cf45
   languageName: node
   linkType: hard
 
@@ -2130,13 +2123,6 @@ __metadata:
     string_decoder: ^1.1.1
     util-deprecate: ^1.0.1
   checksum: d4ea81502d3799439bb955a3a5d1d808592cf3133350ed352aeaa499647858b27b1c4013984900238b0873ec8d0d8defce72469fb7a83e61d53f5ad61cb80dc8
-  languageName: node
-  linkType: hard
-
-"reflect-metadata@npm:^0.1.13":
-  version: 0.1.13
-  resolution: "reflect-metadata@npm:0.1.13"
-  checksum: 798d379a7b6f6455501145419505c97dd11cbc23857a386add2b9ef15963ccf15a48d9d15507afe01d4cd74116df8a213247200bac00320bd7c11ddeaa5e8fb4
   languageName: node
   linkType: hard
 
@@ -2563,9 +2549,9 @@ resolve@^1.10.0:
   languageName: node
   linkType: hard
 
-"tsc-watch@npm:^4.5.0":
-  version: 4.5.0
-  resolution: "tsc-watch@npm:4.5.0"
+"tsc-watch@npm:^4.6.0":
+  version: 4.6.0
+  resolution: "tsc-watch@npm:4.6.0"
   dependencies:
     cross-spawn: ^7.0.3
     node-cleanup: ^2.1.2
@@ -2576,7 +2562,7 @@ resolve@^1.10.0:
     typescript: "*"
   bin:
     tsc-watch: index.js
-  checksum: 9b641895379f6c03bca3cee5ba294052bcdb972ef8411b615427a23a9572ffcc23ca15f5c358db569a9110354eda4bb672e2372179551ec00d3ab3d06447263e
+  checksum: db0066a76246dfa74f95365ab2bd5c563fdce33bc346d3289ba25a2932956f6f464a47295f81391a3ce9e28ad512f7dd326eedfcad0f62d03e321096cb55541b
   languageName: node
   linkType: hard
 
@@ -2766,25 +2752,23 @@ resolve@^1.10.0:
     "@sapphire/discord.js-utilities": ^4.1.5
     "@sapphire/fetch": ^2.0.3
     "@sapphire/framework": ^2.2.1
-    "@sapphire/plugin-api": ^3.1.1
-    "@sapphire/plugin-editable-commands": ^1.1.1
+    "@sapphire/plugin-api": ^3.1.2
+    "@sapphire/plugin-editable-commands": ^1.1.2
     "@sapphire/plugin-logger": ^2.1.1
-    "@sapphire/plugin-subcommands": ^2.1.2
+    "@sapphire/plugin-subcommands": ^2.1.3
     "@sapphire/prettier-config": ^1.2.7
     "@sapphire/time-utilities": ^1.5.0
     "@sapphire/ts-config": ^3.1.6
     "@sapphire/type": ^2.1.2
     "@sapphire/utilities": ^3.1.0
-    "@types/node": ^16.11.14
+    "@types/node": ^17.0.2
     "@types/ws": ^8.2.2
     discord.js: ^13.3.1
     dotenv-cra: ^3.0.2
-    lodash: ^4.17.21
     npm-run-all: ^4.1.5
     prettier: ^2.5.1
-    pretty-quick: ^3.1.2
-    reflect-metadata: ^0.1.13
-    tsc-watch: ^4.5.0
+    pretty-quick: ^3.1.3
+    tsc-watch: ^4.6.0
     typescript: ^4.5.4
   languageName: unknown
   linkType: soft
