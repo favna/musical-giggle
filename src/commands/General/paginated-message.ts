@@ -12,9 +12,9 @@ export class UserCommand extends Command {
 	public async messageRun(message: Message) {
 		const display = new PaginatedMessage({
 			template: new MessageEmbed()
-				.setFooter('', message.author.displayAvatarURL({ dynamic: true }))
+				.setFooter({ text: '', iconURL: message.author.displayAvatarURL({ dynamic: true }) })
 				.setColor('RANDOM')
-				.setAuthor(`Moderation history for Favna#0001`, message.author.displayAvatarURL({ dynamic: true }))
+				.setAuthor({ name: `Moderation history for Favna#0001`, iconURL: message.author.displayAvatarURL({ dynamic: true }) })
 				.setTimestamp()
 		})
 			.addPageEmbed((embed) =>
