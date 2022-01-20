@@ -1,7 +1,7 @@
 import { ApplyOptions } from '@sapphire/decorators';
 import { PaginatedMessage } from '@sapphire/discord.js-utilities';
 import { Command, CommandOptions } from '@sapphire/framework';
-import { Message, MessageEmbed } from 'discord.js';
+import { Constants, Message, MessageEmbed } from 'discord.js';
 
 @ApplyOptions<CommandOptions>({
 	aliases: ['pm'],
@@ -17,6 +17,18 @@ export class UserCommand extends Command {
 				.setAuthor({ name: `Moderation history for Favna#0001`, iconURL: message.author.displayAvatarURL({ dynamic: true }) })
 				.setTimestamp()
 		})
+			.setActions(
+				[
+					{
+						style: 'LINK',
+						label: 'Sapphire Website',
+						emoji: '🔷',
+						url: 'https://sapphirejs.dev',
+						type: Constants.MessageComponentTypes.BUTTON
+					}
+				],
+				true
+			)
 			.addPageEmbed((embed) =>
 				embed //
 					.setDescription('This is the first page')

@@ -9,6 +9,11 @@ const client = new SapphireClient({
 	logger: {
 		level: LogLevel.Debug
 	},
+	api: {
+		listenOptions: {
+			port: 5000
+		}
+	},
 	shards: 'auto',
 	intents: [
 		'GUILDS',
