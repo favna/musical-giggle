@@ -32,6 +32,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@discordjs/collection@npm:^0.5.0":
+  version: 0.5.0
+  resolution: "@discordjs/collection@npm:0.5.0"
+  checksum: a228979bb5f955cf095ce47441c55d0196cd99ff8484b57d26a45e58506c6646d776a98a9e11b822aab4e15fb2ac1aecfdebc63cde8ab7d04d3d74b716e80144
+  languageName: node
+  linkType: hard
+
 "@discordjs/node-pre-gyp@npm:^0.4.1":
   version: 0.4.2
   resolution: "@discordjs/node-pre-gyp@npm:0.4.2"
@@ -2571,7 +2578,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "with-typescript-recommended@workspace:."
   dependencies:
-    "@discordjs/collection": ^0.4.0
+    "@discordjs/collection": ^0.5.0
     "@sapphire/decorators": ^4.0.2
     "@sapphire/discord-utilities": ^2.6.0
     "@sapphire/discord.js-utilities": ^4.4.0
