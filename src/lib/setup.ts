@@ -17,4 +17,4 @@ config({ path: join(srcDir, '.env') });
 inspect.defaultOptions.depth = 1;
 
 // Enable colorette
-colorette.createColors({ useColor: true })
+colorette.createColors({ useColor: true });
