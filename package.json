@@ -5,7 +5,7 @@
   "author": "@sapphire",
   "license": "UNLICENSE",
   "dependencies": {
-    "@discordjs/collection": "^0.7.0",
+    "@discordjs/collection": "^0.8.0",
     "@sapphire/decorators": "^4.3.8",
     "@sapphire/discord-utilities": "^2.11.5",
     "@sapphire/discord.js-utilities": "^4.11.3",
@@ -18,7 +18,7 @@
     "@sapphire/time-utilities": "^1.7.5",
     "@sapphire/type": "^2.2.4",
     "@sapphire/utilities": "^3.7.0",
-    "discord.js": "^13.8.1",
+    "discord.js": "^13.9.1",
     "dotenv-cra": "^3.0.2"
   },
   "devDependencies": {
@@ -48,5 +48,5 @@
     "node": ">=16",
     "npm": ">=7"
   },
-  "packageManager": "yarn@3.2.1"
+  "packageManager": "yarn@3.2.2"
 }
