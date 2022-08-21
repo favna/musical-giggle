@@ -30,12 +30,6 @@ import type { Message } from 'discord.js';
   ]
 })
 export class UserCommand extends Subcommand {
-  // @ts-ignore ignore this
-
-  public async name(message: Message) {
-    return message.channel.send('test');
-  }
-
   public async show(message: Message) {
     return message.channel.send('Showing!');
   }
