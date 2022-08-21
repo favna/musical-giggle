@@ -48,7 +48,7 @@ export class UserCommand extends Subcommand {
                   .setDescription('Resets the configuration')
               )
           ),
-      { guildIds: ['541738403230777351'], idHints: ['1010814902568501338'] }
+      { guildIds: ['541738403230777351'], idHints: ['634925392993714224'] }
     );
   }
 
