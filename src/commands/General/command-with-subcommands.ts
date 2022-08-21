@@ -1,13 +1,35 @@
 import { ApplyOptions } from '@sapphire/decorators';
-import { SubCommandPluginCommand, SubCommandPluginCommandOptions } from '@sapphire/plugin-subcommands';
+import { Subcommand } from '@sapphire/plugin-subcommands';
 import type { Message } from 'discord.js';
 
-@ApplyOptions<SubCommandPluginCommandOptions>({
+@ApplyOptions<Subcommand.Options>({
   aliases: ['cws'],
   description: 'A basic command with some subcommands',
-  subCommands: ['add', 'name', { input: 'create', output: 'add' }, 'remove', 'reset', { input: 'show', default: true }]
+  subcommands: [
+    {
+      name: 'add',
+      messageRun: 'add'
+    },
+    {
+      name: 'create',
+      messageRun: 'add'
+    },
+    {
+      name: 'remove',
+      messageRun: 'remove'
+    },
+    {
+      name: 'reset',
+      messageRun: 'reset'
+    },
+    {
+      name: 'show',
+      messageRun: 'show',
+      default: true
+    }
+  ]
 })
-export class UserCommand extends SubCommandPluginCommand {
+export class UserCommand extends Subcommand {
   // @ts-ignore ignore this
 
   public async name(message: Message) {

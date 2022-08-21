@@ -6,12 +6,13 @@ const client = new SapphireClient({
   caseInsensitiveCommands: true,
   caseInsensitivePrefixes: true,
   loadDefaultErrorListeners: true,
+  loadMessageCommandListeners: true,
   logger: {
     level: LogLevel.Debug
   },
   api: {
     listenOptions: {
-      port: 5000
+      port: 6000
     }
   },
   shards: 'auto',

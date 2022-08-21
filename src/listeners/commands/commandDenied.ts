@@ -1,11 +1,11 @@
 import { ApplyOptions } from '@sapphire/decorators';
-import { CommandDeniedPayload, Events, Listener, ListenerOptions, UserError } from '@sapphire/framework';
+import { Events, Listener, ListenerOptions, MessageCommandDeniedPayload, UserError } from '@sapphire/framework';
 
 @ApplyOptions<ListenerOptions>({
-  event: Events.CommandDenied
+  event: Events.MessageCommandDenied
 })
-export class UserEvent extends Listener<typeof Events.CommandDenied> {
-  public async run({ context, message: content }: UserError, { message }: CommandDeniedPayload) {
+export class UserEvent extends Listener<typeof Events.MessageCommandDenied> {
+  public async run({ context, message: content }: UserError, { message }: MessageCommandDeniedPayload) {
     // `context: { silent: true }` should make UserError silent:
     // Use cases for this are for example permissions error when running the `eval` command.
     if (Reflect.get(Object(context), 'silent')) return;
