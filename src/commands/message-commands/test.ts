@@ -4,7 +4,7 @@ import { Command, CommandOptions } from '@sapphire/framework';
 import { Constants, Message, MessageEmbed } from 'discord.js';
 
 @ApplyOptions<CommandOptions>({
-  description: 'ping pong'
+  description: 'malleable test command'
 })
 export class UserCommand extends Command {
   public async messageRun(message: Message) {

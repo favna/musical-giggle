@@ -5,7 +5,7 @@ import { Message, MessageEmbed } from 'discord.js';
 
 @ApplyOptions<Subcommand.Options>({
   aliases: ['cwd'],
-  description: 'A basic command with some subcommands',
+  description: 'A basic message command with some subcommands',
   subcommands: [
     {
       name: 'add',
@@ -25,8 +25,7 @@ import { Message, MessageEmbed } from 'discord.js';
     },
     {
       name: 'show',
-      messageRun: 'show',
-      default: true
+      messageRun: 'show'
     }
   ]
 })

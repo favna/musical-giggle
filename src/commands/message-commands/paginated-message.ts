@@ -5,7 +5,7 @@ import { Constants, Message, MessageEmbed } from 'discord.js';
 
 @ApplyOptions<CommandOptions>({
   aliases: ['pm'],
-  description: 'A command that uses paginated messages.',
+  description: 'A message command that uses paginated messages.',
   generateDashLessAliases: true
 })
 export class UserCommand extends Command {

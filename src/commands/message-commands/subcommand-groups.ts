@@ -4,7 +4,7 @@ import type { Message } from 'discord.js';
 
 @ApplyOptions<Subcommand.Options>({
   aliases: ['sg'],
-  description: 'A basic command with some subcommand groups',
+  description: 'A message command command with some subcommand groups',
   subcommands: [
     {
       type: 'group',
