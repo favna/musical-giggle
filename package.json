@@ -18,7 +18,7 @@
     "@sapphire/type": "^2.2.4",
     "@sapphire/utilities": "^3.9.3",
     "@skyra/env-utilities": "^1.0.2",
-    "discord.js": "^13.10.3"
+    "discord.js": "^13.11.0"
   },
   "devDependencies": {
     "@sapphire/prettier-config": "^1.4.4",
