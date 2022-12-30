@@ -25,7 +25,7 @@ export class UserListener extends Listener<typeof Events.ChatInputCommandError> 
 
     // Extract useful information about the DiscordAPIError
     if (error instanceof DiscordAPIError || error instanceof HTTPError) {
-      if (ignoredCodes.includes(error.code)) {
+      if (ignoredCodes.includes(error.status)) {
         return;
       }
 

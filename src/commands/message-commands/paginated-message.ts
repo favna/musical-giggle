@@ -1,7 +1,7 @@
 import { ApplyOptions } from '@sapphire/decorators';
 import { PaginatedMessage } from '@sapphire/discord.js-utilities';
 import { Command, CommandOptions } from '@sapphire/framework';
-import { Constants, Message, MessageEmbed } from 'discord.js';
+import { ButtonStyle, ComponentType, EmbedBuilder, Message } from 'discord.js';
 
 @ApplyOptions<CommandOptions>({
   aliases: ['pm'],
@@ -11,20 +11,20 @@ import { Constants, Message, MessageEmbed } from 'discord.js';
 export class UserCommand extends Command {
   public async messageRun(message: Message) {
     const display = new PaginatedMessage({
-      template: new MessageEmbed()
-        .setFooter({ text: '', iconURL: message.author.displayAvatarURL({ dynamic: true }) })
-        .setColor('RANDOM')
-        .setAuthor({ name: `Moderation history for Favna#0001`, iconURL: message.author.displayAvatarURL({ dynamic: true }) })
+      template: new EmbedBuilder()
+        .setFooter({ text: '', iconURL: message.author.displayAvatarURL() })
+        .setColor('Random')
+        .setAuthor({ name: `Moderation history for Favna#0001`, iconURL: message.author.displayAvatarURL() })
         .setTimestamp()
     })
       .setActions(
         [
           {
-            style: 'LINK',
+            style: ButtonStyle.Link,
             label: 'Sapphire Website',
             emoji: '🔷',
             url: 'https://sapphirejs.dev',
-            type: Constants.MessageComponentTypes.BUTTON
+            type: ComponentType.Button
           }
         ],
         true

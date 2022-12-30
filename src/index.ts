@@ -1,5 +1,6 @@
 import './lib/setup';
 import { LogLevel, SapphireClient } from '@sapphire/framework';
+import { GatewayIntentBits } from 'discord.js';
 
 const client = new SapphireClient({
   defaultPrefix: 'dr!',
@@ -17,15 +18,16 @@ const client = new SapphireClient({
   },
   shards: 'auto',
   intents: [
-    'GUILDS',
-    'GUILD_MEMBERS',
-    'GUILD_BANS',
-    'GUILD_EMOJIS_AND_STICKERS',
-    'GUILD_VOICE_STATES',
-    'GUILD_MESSAGES',
-    'GUILD_MESSAGE_REACTIONS',
-    'DIRECT_MESSAGES',
-    'DIRECT_MESSAGE_REACTIONS'
+    GatewayIntentBits.DirectMessageReactions,
+    GatewayIntentBits.DirectMessages,
+    GatewayIntentBits.GuildBans,
+    GatewayIntentBits.GuildEmojisAndStickers,
+    GatewayIntentBits.GuildMembers,
+    GatewayIntentBits.GuildMessageReactions,
+    GatewayIntentBits.GuildMessages,
+    GatewayIntentBits.Guilds,
+    GatewayIntentBits.GuildVoiceStates,
+    GatewayIntentBits.MessageContent
   ]
 });
 

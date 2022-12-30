@@ -1,7 +1,7 @@
 import { ApplyOptions } from '@sapphire/decorators';
 import { PaginatedMessage } from '@sapphire/discord.js-utilities';
 import { Command, CommandOptions } from '@sapphire/framework';
-import { Constants, Message, MessageEmbed } from 'discord.js';
+import { ButtonStyle, ComponentType, EmbedBuilder, Message } from 'discord.js';
 
 @ApplyOptions<CommandOptions>({
   description: 'malleable test command'
@@ -9,10 +9,10 @@ import { Constants, Message, MessageEmbed } from 'discord.js';
 export class UserCommand extends Command {
   public async messageRun(message: Message) {
     const paginationEmbed = new PaginatedMessage({
-      template: new MessageEmbed() //
-        .setColor('BLUE')
+      template: new EmbedBuilder() //
+        .setColor('Blue')
         .setTitle(`Hi`)
-        .setFooter('Hi')
+        .setFooter({ text: 'Hi' })
     });
 
     paginationEmbed //
@@ -20,10 +20,10 @@ export class UserCommand extends Command {
       .addPageEmbed((embed) => embed.setDescription('Hello'));
 
     paginationEmbed.addAction({
-      type: Constants.MessageComponentTypes.BUTTON,
+      type: ComponentType.Button,
       customId: 'Ban',
       emoji: '🔨',
-      style: 'PRIMARY',
+      style: ButtonStyle.Primary,
       run: async () => console.log('hi')
     });
 
