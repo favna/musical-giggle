@@ -1,7 +1,7 @@
 import { ApplyOptions, RequiresClientPermissions, RequiresDMContext, RequiresGuildContext } from '@sapphire/decorators';
 import { send } from '@sapphire/plugin-editable-commands';
 import { Subcommand } from '@sapphire/plugin-subcommands';
-import { Message, MessageEmbed } from 'discord.js';
+import { Message, EmbedBuilder, PermissionFlagsBits } from 'discord.js';
 
 @ApplyOptions<Subcommand.Options>({
   aliases: ['cwd'],
@@ -35,9 +35,9 @@ export class UserCommand extends Subcommand {
     return send(message, 'Showing!');
   }
 
-  @RequiresClientPermissions('EMBED_LINKS') // This sub-command requires the bot to have EMBED_LINKS permission because it sends a MessageEmbed
+  @RequiresClientPermissions(PermissionFlagsBits.EmbedLinks) // This sub-command requires the bot to have PermissionFlagsBits.EmbedLinks permission because it sends a MessageEmbed
   public async add(message: Message) {
-    const embed = new MessageEmbed() //
+    const embed = new EmbedBuilder() //
       .setColor('#3986E4')
       .setDescription('Added!')
       .setTitle('Configuration Log')
