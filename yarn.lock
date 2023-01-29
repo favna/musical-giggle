@@ -688,14 +688,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"discord-api-types@npm:^0.37.20, discord-api-types@npm:^0.37.23, discord-api-types@npm:^0.37.25":
-  version: 0.37.26
-  resolution: "discord-api-types@npm:0.37.26"
-  checksum: 66a1e43568af6d928aab253c81a192985c9025de72100881b8b206f1b8a746ef211670e1e88d152f59d7a186176a6afc3f81629ba7ccb91dab264b027f187004
-  languageName: node
-  linkType: hard
-
-"discord-api-types@npm:^0.37.30":
+"discord-api-types@npm:^0.37.20, discord-api-types@npm:^0.37.23, discord-api-types@npm:^0.37.25, discord-api-types@npm:^0.37.30":
   version: 0.37.30
   resolution: "discord-api-types@npm:0.37.30"
   checksum: 0e257dd0df6a56d44e8f7b71cfae99b5b5d6c9841a08b477eb6bd69f6dd3bbdb3cefb2b82c899d726db2b2f11b90e2ea99ec94441cb074d07651a8e169be3244
@@ -1546,16 +1539,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"prettier@npm:^2.8.2":
-  version: 2.8.2
-  resolution: "prettier@npm:2.8.2"
-  bin:
-    prettier: bin-prettier.js
-  checksum: 740c56c2128d587d656ea1dde9bc9c3503dfc94db4f3ac387259215eeb2e216680bdad9d18a0c9feecc6b42cfa188d6fa777df4c36c1d00cedd4199074fbfbd2
-  languageName: node
-  linkType: hard
-
-"prettier@npm:^2.8.3":
+"prettier@npm:^2.8.2, prettier@npm:^2.8.3":
   version: 2.8.3
   resolution: "prettier@npm:2.8.3"
   bin:
