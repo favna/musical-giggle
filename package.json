@@ -14,6 +14,7 @@
     "@sapphire/plugin-editable-commands": "^3.0.0",
     "@sapphire/plugin-logger": "^3.0.1",
     "@sapphire/plugin-subcommands": "^4.0.0",
+    "@sapphire/plugin-utilities-store": "file:./utilities-store3.tgz",
     "@sapphire/time-utilities": "^1.7.8",
     "@sapphire/type": "^2.3.0",
     "@sapphire/utilities": "^3.11.0",
@@ -40,5 +41,8 @@
     "watch:start": "tsc-watch --onSuccess \"yarn start\"",
     "format": "prettier --write ."
   },
-  "packageManager": "yarn@3.3.1"
+  "packageManager": "yarn@3.3.1",
+  "resolutions": {
+    "@sapphire/plugin-utilities-store": "portal:/Users/favna/workspace/sapphire/plugins/packages/utilities-store"
+  }
 }

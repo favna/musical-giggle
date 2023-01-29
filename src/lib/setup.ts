@@ -1,9 +1,11 @@
 // Unless explicitly defined, set NODE_ENV as development:
 process.env.NODE_ENV ??= 'development';
 
+import { ApplicationCommandRegistries, RegisterBehavior } from '@sapphire/framework';
 import '@sapphire/plugin-api/register';
 import '@sapphire/plugin-editable-commands/register';
 import '@sapphire/plugin-logger/register';
+import '@sapphire/plugin-utilities-store/register';
 import { ArrayString, setup } from '@skyra/env-utilities';
 import * as colorette from 'colorette';
 import { join } from 'path';
@@ -15,6 +17,8 @@ setup({ path: join(srcDir, '.env') });
 
 // Set default inspection depth
 inspect.defaultOptions.depth = 1;
+
+ApplicationCommandRegistries.setDefaultBehaviorWhenNotIdentical(RegisterBehavior.BulkOverwrite);
 
 // Enable colorette
 colorette.createColors({ useColor: true });
