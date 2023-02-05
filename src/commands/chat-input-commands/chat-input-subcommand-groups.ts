@@ -48,23 +48,23 @@ export class UserCommand extends Subcommand {
                   .setDescription('Resets the configuration')
               )
           ),
-      { guildIds: ['541738403230777351'], idHints: ['634925392993714224'] }
+      { guildIds: ['838895946397646850'] }
     );
   }
 
-  public async configShow(interaction: Subcommand.ChatInputInteraction) {
+  public async configShow(interaction: Subcommand.ChatInputCommandInteraction) {
     return interaction.reply('Showing!');
   }
 
-  public async configEdit(interaction: Subcommand.ChatInputInteraction) {
+  public async configEdit(interaction: Subcommand.ChatInputCommandInteraction) {
     return interaction.reply('Editing!');
   }
 
-  public async configRemove(interaction: Subcommand.ChatInputInteraction) {
+  public async configRemove(interaction: Subcommand.ChatInputCommandInteraction) {
     return interaction.reply('Removing!');
   }
 
-  public async configReset(interaction: Subcommand.ChatInputInteraction) {
+  public async configReset(interaction: Subcommand.ChatInputCommandInteraction) {
     return interaction.reply('Resetting!');
   }
 }
