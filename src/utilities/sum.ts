@@ -8,9 +8,13 @@ export class SumUtility extends UtilityFunction {
     });
   }
 
-  public handle(numberOne: number, numberTwo: number) {
+  public add(numberOne: number, numberTwo: number) {
+    this.container.logger.warn('testing sum');
+    return numberOne + numberTwo;
+  }
+
+  public subtract(numberOne: number, numberTwo: number) {
+    this.container.logger.warn('testing sum');
     return numberOne + numberTwo;
   }
 }
-
-

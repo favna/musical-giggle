@@ -1,5 +1,6 @@
 import { ApplyOptions } from '@sapphire/decorators';
 import { Command } from '@sapphire/framework';
+import type { SumUtility } from '../../utilities/sum';
 
 @ApplyOptions<Command.Options>({
   description: 'A basic chat input command that pings'
@@ -14,8 +15,9 @@ export class UserCommand extends Command {
   }
 
   public async chatInputRun(interaction: Command.ChatInputCommandInteraction) {
-    return interaction.reply({
-      content: `Test ${this.container.utilities.sum(1, 2)}`
+    interaction.deferReply({ ephemeral: true });
+    return interaction.editReply({
+      content: `Test ${this.container.utilities.sum.add(1, 2)}`
     });
     // return interaction.reply('Ping!');
   }
@@ -23,6 +25,6 @@ export class UserCommand extends Command {
 
 declare module '@sapphire/plugin-utilities-store' {
   export interface Utilities {
-    sum(numberOne: number, numberTwo: number): number;
+    sum: SumUtility;
   }
 }

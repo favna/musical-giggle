@@ -2024,7 +2024,7 @@ __metadata:
     "@sapphire/plugin-editable-commands": ^3.0.0
     "@sapphire/plugin-logger": ^3.0.1
     "@sapphire/plugin-subcommands": ^4.0.0
-    "@sapphire/plugin-utilities-store": "file:./utilities-store3.tgz"
+    "@sapphire/plugin-utilities-store": "*"
     "@sapphire/prettier-config": ^1.4.5
     "@sapphire/time-utilities": ^1.7.8
     "@sapphire/ts-config": ^3.3.4
