@@ -19,13 +19,13 @@
     "@sapphire/utilities": "^3.11.0",
     "@skyra/env-utilities": "^1.1.0",
     "colorette": "^2.0.19",
-    "discord-api-types": "^0.37.33",
+    "discord-api-types": "^0.37.35",
     "discord.js": "^14.7.1"
   },
   "devDependencies": {
     "@sapphire/prettier-config": "^1.4.5",
     "@sapphire/ts-config": "^3.3.4",
-    "@types/node": "^18.13.0",
+    "@types/node": "^18.14.0",
     "@types/ws": "^8.5.4",
     "prettier": "^2.8.4",
     "pretty-quick": "^3.1.3",
