@@ -1,12 +1,16 @@
-import { ApplyOptions } from '@sapphire/decorators';
 import { Events, Listener, LogLevel, type ChatInputCommandSuccessPayload, type Command } from '@sapphire/framework';
 import type { Logger } from '@sapphire/plugin-logger';
 import { cyan } from 'colorette';
 import type { APIUser } from 'discord-api-types/v9';
 import type { Guild, User } from 'discord.js';
 
-@ApplyOptions<Listener.Options>({ event: Events.ChatInputCommandSuccess })
 export class UserListener extends Listener {
+  public constructor(context: Listener.Context) {
+    super(context, {
+      event: Events.ChatInputCommandSuccess
+    });
+  }
+
   public override run(payload: ChatInputCommandSuccessPayload) {
     const { author, commandName, sentAt, shard, runtime } = getSuccessLoggerData(payload);
     this.container.logger.debug(`${shard} - ${commandName} ${author} ${sentAt} (${runtime})`);

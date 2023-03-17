@@ -1,13 +1,14 @@
-import { ApplyOptions } from '@sapphire/decorators';
 import { PaginatedMessage } from '@sapphire/discord.js-utilities';
-import { Command, CommandOptions } from '@sapphire/framework';
+import { Command } from '@sapphire/framework';
 import { ButtonStyle, ComponentType, EmbedBuilder, Message } from 'discord.js';
 
-@ApplyOptions<CommandOptions>({
-  description: 'malleable test command'
-})
 export class UserCommand extends Command {
-  public async messageRun(message: Message) {
+  public constructor(context: Command.Context) {
+    super(context, {
+      description: 'malleable test command'
+    });
+  }
+  public override async messageRun(message: Message) {
     const paginationEmbed = new PaginatedMessage({
       template: new EmbedBuilder() //
         .setColor('Blue')

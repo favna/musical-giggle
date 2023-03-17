@@ -1,19 +1,20 @@
-import { ApplyOptions } from '@sapphire/decorators';
 import { PaginatedMessage } from '@sapphire/discord.js-utilities';
-import { Command, CommandOptions } from '@sapphire/framework';
+import { Command } from '@sapphire/framework';
 import { ButtonStyle, ComponentType, EmbedBuilder, Message } from 'discord.js';
 
-@ApplyOptions<CommandOptions>({
-  aliases: ['pm'],
-  description: 'A message command that uses paginated messages.',
-  generateDashLessAliases: true
-})
 export class UserCommand extends Command {
-  public async messageRun(message: Message) {
+  public constructor(context: Command.Context) {
+    super(context, {
+      aliases: ['pm'],
+      description: 'A message command that uses paginated messages.',
+      generateDashLessAliases: true
+    });
+  }
+  public override async messageRun(message: Message) {
     const display = new PaginatedMessage({
       template: new EmbedBuilder()
-        .setFooter({ text: '', iconURL: message.author.displayAvatarURL() })
-        .setColor('Random')
+        .setFooter({ text: 'U200b', iconURL: message.author.displayAvatarURL() })
+        .setColor('Red')
         .setAuthor({ name: `Moderation history for Favna#0001`, iconURL: message.author.displayAvatarURL() })
         .setTimestamp()
     })
