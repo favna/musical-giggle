@@ -1,22 +1,24 @@
-import { ApplyOptions } from '@sapphire/decorators';
 import { Subcommand } from '@sapphire/plugin-subcommands';
 
-@ApplyOptions<Subcommand.Options>({
-  description: 'A basic chat input command with some subcommand groups',
-  subcommands: [
-    {
-      type: 'group',
-      name: 'config',
-      entries: [
-        { name: 'edit', chatInputRun: 'configEdit' },
-        { name: 'show', chatInputRun: 'configShow', default: true },
-        { name: 'remove', chatInputRun: 'configRemove' },
-        { name: 'reset', chatInputRun: 'configReset' }
-      ]
-    }
-  ]
-})
 export class UserCommand extends Subcommand {
+  public constructor(context: Subcommand.Context) {
+    super(context, {
+      description: 'A basic chat input command with some subcommand groups',
+      subcommands: [
+        {
+          type: 'group',
+          name: 'config',
+          entries: [
+            { name: 'edit', chatInputRun: 'configEdit' },
+            { name: 'show', chatInputRun: 'configShow', default: true },
+            { name: 'remove', chatInputRun: 'configRemove' },
+            { name: 'reset', chatInputRun: 'configReset' }
+          ]
+        }
+      ]
+    });
+  }
+
   public override registerApplicationCommands(registry: Subcommand.Registry) {
     registry.registerChatInputCommand(
       (builder) =>

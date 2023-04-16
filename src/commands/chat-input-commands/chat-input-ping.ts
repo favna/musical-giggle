@@ -1,10 +1,12 @@
-import { ApplyOptions } from '@sapphire/decorators';
 import { Command } from '@sapphire/framework';
 
-@ApplyOptions<Command.Options>({
-  description: 'A basic chat input command that pings'
-})
 export class UserCommand extends Command {
+  public constructor(context: Command.Context) {
+    super(context, {
+      description: 'A basic chat input command that pings'
+    });
+  }
+
   public override registerApplicationCommands(registry: Command.Registry) {
     registry.registerChatInputCommand(
       (builder) =>
@@ -15,7 +17,7 @@ export class UserCommand extends Command {
     );
   }
 
-  public async chatInputRun(interaction: Command.ChatInputCommandInteraction) {
+  public override async chatInputRun(interaction: Command.ChatInputCommandInteraction) {
     return interaction.reply('Ping!');
   }
 }
