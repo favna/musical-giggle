@@ -1,6 +1,6 @@
 import { send } from '@sapphire/plugin-editable-commands';
 import { EmbedBuilder, Message } from 'discord.js';
-import { RandomLoadingMessage } from './constants';
+import { RandomLoadingMessage } from './constants.js';
 
 /**
  * Picks a random item from an array

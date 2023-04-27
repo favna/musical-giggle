@@ -2,9 +2,8 @@ import { userMention } from '@discordjs/builders';
 import { ArgumentError, Events, Listener, UserError, type ChatInputCommandErrorPayload } from '@sapphire/framework';
 import { codeBlock } from '@sapphire/utilities';
 import { envParseArray } from '@skyra/env-utilities';
-import { RESTJSONErrorCodes } from 'discord-api-types/v9';
-import { DiscordAPIError, HTTPError, type CommandInteraction } from 'discord.js';
-import { Emojis } from '../../../lib/constants';
+import { DiscordAPIError, HTTPError, RESTJSONErrorCodes, type CommandInteraction } from 'discord.js';
+import { Emojis } from '../../../lib/constants.js';
 
 const ignoredCodes = [RESTJSONErrorCodes.UnknownChannel, RESTJSONErrorCodes.UnknownMessage];
 const OWNERS = envParseArray('OWNERS');

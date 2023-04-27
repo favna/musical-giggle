@@ -7,12 +7,11 @@ import '@sapphire/plugin-editable-commands/register';
 import '@sapphire/plugin-logger/register';
 import { setup, type ArrayString } from '@skyra/env-utilities';
 import * as colorette from 'colorette';
-import { join } from 'path';
-import { inspect } from 'util';
-import { srcDir } from './constants';
+import { inspect } from 'node:util';
+import { srcDir } from './constants.js';
 
 // Read env var
-setup({ path: join(srcDir, '.env') });
+setup({ path: new URL('.env', srcDir) });
 
 // Set default inspection depth
 inspect.defaultOptions.depth = 1;

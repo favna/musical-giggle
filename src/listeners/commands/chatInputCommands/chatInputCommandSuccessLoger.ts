@@ -1,8 +1,7 @@
 import { Events, Listener, LogLevel, type ChatInputCommandSuccessPayload, type Command } from '@sapphire/framework';
 import type { Logger } from '@sapphire/plugin-logger';
 import { cyan } from 'colorette';
-import type { APIUser } from 'discord-api-types/v9';
-import type { Guild, User } from 'discord.js';
+import type { APIUser, Guild, User } from 'discord.js';
 
 export class UserListener extends Listener {
   public constructor(context: Listener.Context) {

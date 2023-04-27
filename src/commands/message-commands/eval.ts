@@ -2,7 +2,7 @@ import { Args, Command } from '@sapphire/framework';
 import { Type } from '@sapphire/type';
 import { codeBlock, isThenable } from '@sapphire/utilities';
 import type { Message } from 'discord.js';
-import { inspect } from 'util';
+import { inspect } from 'node:util';
 
 export class UserCommand extends Command {
   public constructor(context: Command.Context) {
