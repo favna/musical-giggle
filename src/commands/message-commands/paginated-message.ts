@@ -1,6 +1,6 @@
 import { PaginatedMessage } from '@sapphire/discord.js-utilities';
 import { Command } from '@sapphire/framework';
-import { ButtonStyle, ComponentType, EmbedBuilder, Message } from 'discord.js';
+import { ButtonStyle, ComponentType, EmbedBuilder, type Message } from 'discord.js';
 
 export class UserCommand extends Command {
   public constructor(context: Command.Context) {

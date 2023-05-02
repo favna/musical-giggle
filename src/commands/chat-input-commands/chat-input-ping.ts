@@ -3,6 +3,7 @@ import { Command } from '@sapphire/framework';
 export class UserCommand extends Command {
   public constructor(context: Command.Context) {
     super(context, {
+      name: 'cip',
       description: 'A basic chat input command that pings'
     });
   }
