@@ -7,7 +7,7 @@
   "type": "module",
   "dependencies": {
     "@sapphire/decorators": "^6.0.2",
-    "@sapphire/discord-utilities": "^3.0.4",
+    "@sapphire/discord-utilities": "^3.1.0",
     "@sapphire/discord.js-utilities": "7.0.1",
     "@sapphire/fetch": "^2.4.1",
     "@sapphire/framework": "^4.5.1",
@@ -20,13 +20,13 @@
     "@sapphire/utilities": "^3.13.0",
     "@skyra/env-utilities": "^1.2.1",
     "colorette": "^2.0.20",
-    "discord-api-types": "^0.37.51",
+    "discord-api-types": "^0.37.52",
     "discord.js": "^14.12.1"
   },
   "devDependencies": {
     "@sapphire/prettier-config": "^2.0.0",
     "@sapphire/ts-config": "^4.0.1",
-    "@types/node": "^20.4.8",
+    "@types/node": "^20.4.10",
     "@types/ws": "^8.5.5",
     "prettier": "^3.0.1",
     "tsc-watch": "^6.0.4",
