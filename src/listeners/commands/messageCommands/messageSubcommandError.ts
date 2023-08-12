@@ -11,6 +11,7 @@ export class UserEvent extends Listener<typeof SubcommandPluginEvents.MessageSub
       event: SubcommandPluginEvents.MessageSubcommandError
     });
   }
+
   public async run(error: Error, { command, message }: MessageSubcommandErrorPayload) {
     this.container.logger.debug('Subcommand Error triggered');
 

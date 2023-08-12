@@ -6,6 +6,7 @@ export class UserEvent extends Listener<typeof Events.MessageCommandError> {
       event: Events.MessageCommandError
     });
   }
+
   public run() {
     this.container.logger.debug('Command Error triggered');
   }

@@ -5,13 +5,13 @@ export class UserCommand extends Subcommand {
   public constructor(context: Subcommand.Context) {
     super(context, {
       aliases: ['sg'],
-      description: 'A message command command with some subcommand groups',
+      description: 'A message command with some subcommand groups',
       subcommands: [
         {
           type: 'group',
           name: 'config',
           entries: [
-            { name: 'edit', messageRun: 'configEdit' },
+            { name: 'edit', messageRun: 'configEdit', preconditions: ['NSFW'] },
             { name: 'show', messageRun: 'configShow', default: true },
             { name: 'remove', messageRun: 'configRemove' },
             { name: 'reset', messageRun: 'configReset' }

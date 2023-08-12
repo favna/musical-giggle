@@ -6,6 +6,7 @@ export class UserEvent extends Listener<typeof Events.MessageCommandRun> {
       event: Events.MessageCommandRun
     });
   }
+
   public run() {
     this.container.logger.debug('Command Run triggered');
   }
