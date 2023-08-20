@@ -20,15 +20,15 @@
     "@sapphire/utilities": "^3.13.0",
     "@skyra/env-utilities": "^1.2.1",
     "colorette": "^2.0.20",
-    "discord-api-types": "^0.37.52",
-    "discord.js": "^14.12.1"
+    "discord-api-types": "^0.37.54",
+    "discord.js": "^14.13.0"
   },
   "devDependencies": {
     "@sapphire/prettier-config": "^2.0.0",
     "@sapphire/ts-config": "^4.0.1",
-    "@types/node": "^20.4.10",
+    "@types/node": "^20.5.1",
     "@types/ws": "^8.5.5",
-    "prettier": "^3.0.1",
+    "prettier": "^3.0.2",
     "tsc-watch": "^6.0.4",
     "typescript": "^5.1.6"
   },
@@ -40,5 +40,5 @@
     "watch:start": "tsc-watch --onSuccess \"yarn start\"",
     "format": "prettier --write ."
   },
-  "packageManager": "yarn@3.6.1"
+  "packageManager": "yarn@3.6.2"
 }
