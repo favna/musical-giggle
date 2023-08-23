@@ -10,6 +10,7 @@ export class UserEvent extends Listener<typeof Events.MessageCommandSuccess> {
       event: Events.MessageCommandSuccess
     });
   }
+
   public run({ message, command }: MessageCommandSuccessPayload) {
     const shard = this.shard(message.guild?.shardId ?? 0);
     const commandName = this.command(command);

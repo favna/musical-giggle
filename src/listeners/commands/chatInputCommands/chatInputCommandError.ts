@@ -9,6 +9,12 @@ const ignoredCodes = [RESTJSONErrorCodes.UnknownChannel, RESTJSONErrorCodes.Unkn
 const OWNERS = envParseArray('OWNERS');
 
 export class UserListener extends Listener<typeof Events.ChatInputCommandError> {
+  public constructor(context: Listener.Context) {
+    super(context, {
+      event: Events.ChatInputCommandError
+    });
+  }
+
   public async run(error: Error, { command, interaction }: ChatInputCommandErrorPayload) {
     // If the error was a string or an UserError, send it to the user:
     if (typeof error === 'string') return this.stringError(interaction, error);
@@ -62,8 +68,6 @@ export class UserListener extends Listener<typeof Events.ChatInputCommandError> 
   }
 
   private userError(interaction: CommandInteraction, error: UserError) {
-    if (Reflect.get(Object(error.context), 'silent')) return;
-
     return this.alert(
       interaction,
       error.message ||

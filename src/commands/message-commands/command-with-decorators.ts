@@ -11,7 +11,8 @@ export class UserCommand extends Subcommand {
       subcommands: [
         {
           name: 'add',
-          messageRun: 'add'
+          messageRun: 'add',
+          preconditions: ['NSFW']
         },
         {
           name: 'create',
