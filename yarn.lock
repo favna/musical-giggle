@@ -225,46 +225,44 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@sapphire/plugin-api@npm:^5.1.0":
-  version: 5.1.0
-  resolution: "@sapphire/plugin-api@npm:5.1.0"
+"@sapphire/plugin-api@npm:^5.1.1":
+  version: 5.1.1
+  resolution: "@sapphire/plugin-api@npm:5.1.1"
   dependencies:
     "@types/ws": ^8.5.5
-    tldts: ^6.0.5
-    tslib: ^2.5.3
-    undici: ^5.22.1
-  checksum: f8aa319490f063007470dcfc13c78dc2dcd84ef00f4532496c388a9accef2b7c3e5ed6a66d8a8d255dbb43333d9a925d6595cb6fd4fbd11eb35d1a5f75e5c6a6
+    tldts: ^6.0.14
+    tslib: ^2.6.2
+    undici: ^5.23.0
+  checksum: 11940e21587243ea89023165ccbda6aac1fde5b774fccb1ad143185ed661fb3a36d05a3f83a5b91c4fc24b223eec2d3d78577d1e09c1fde91d0ef355eca9af03
   languageName: node
   linkType: hard
 
-"@sapphire/plugin-editable-commands@npm:^3.0.2":
-  version: 3.0.2
-  resolution: "@sapphire/plugin-editable-commands@npm:3.0.2"
+"@sapphire/plugin-editable-commands@npm:^3.0.3":
+  version: 3.0.3
+  resolution: "@sapphire/plugin-editable-commands@npm:3.0.3"
   dependencies:
     "@skyra/editable-commands": ^3.0.1
-    tslib: ^2.5.0
-  checksum: 34043aa3394d01ddeae8f5a8bafd0d81c8e19a84c71fd2b6037c1f2bc567ecc4bff6bec08e5d17520c9db6ad6201c8f1cfb2b710be7a389686a2707f55193f0e
+  checksum: c4b6953df71447eb74f4b2e36709f04897e63798ac4bab6237da210dfe59b5cdbfd8f5eb31ca83367c2de69957b49a83d1a663de06825a534bcd039788456019
   languageName: node
   linkType: hard
 
-"@sapphire/plugin-logger@npm:^3.0.5":
-  version: 3.0.5
-  resolution: "@sapphire/plugin-logger@npm:3.0.5"
+"@sapphire/plugin-logger@npm:^3.0.6":
+  version: 3.0.6
+  resolution: "@sapphire/plugin-logger@npm:3.0.6"
   dependencies:
     "@sapphire/timestamp": ^1.0.1
     colorette: ^2.0.20
-    tslib: ^2.6.0
-  checksum: 65016239fe2c7ed5d9048fffa0bb2c32be9b7740c72d760080353450aed7cb0d17c7469dbdf2d12a0054f78e1a1a07b68e6b6424542980519983e76097d9348c
+  checksum: 18bb5726a52595aaae7bcd07ec367d5c7ba78fc9eb38c45f84427f67efd2c8066c64f06a67af483489d0dd6866cb7b75a16ad37ceee10d76b30c47fe117fb351
   languageName: node
   linkType: hard
 
-"@sapphire/plugin-subcommands@npm:^4.1.0":
-  version: 4.1.0
-  resolution: "@sapphire/plugin-subcommands@npm:4.1.0"
+"@sapphire/plugin-subcommands@npm:^4.1.1":
+  version: 4.1.1
+  resolution: "@sapphire/plugin-subcommands@npm:4.1.1"
   dependencies:
     "@sapphire/utilities": ^3.13.0
     tslib: ^2.6.2
-  checksum: dba0aec927afa4ba5c6cdb420ad4da9737120d7dfcb4df8d2f0e98c1b9e65f64259fc1253ab1cf8fbe9d3fa802f76f919e3f70d05c1b87a8d7508d8ecad4e021
+  checksum: 48a26150580e586ba053a1e4e5a8484f7142b25dab2ae76b147a90ad2b5dbe7acbf5fb5b8327c358cbc8767867cc562071edb7dc32e3d64e97ecaaedb04d5946
   languageName: node
   linkType: hard
 
@@ -1683,7 +1681,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"tldts@npm:^6.0.5":
+"tldts@npm:^6.0.14":
   version: 6.0.14
   resolution: "tldts@npm:6.0.14"
   dependencies:
@@ -1724,7 +1722,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"tslib@npm:^2.4.0, tslib@npm:^2.5.0, tslib@npm:^2.5.3, tslib@npm:^2.6.0, tslib@npm:^2.6.1, tslib@npm:^2.6.2":
+"tslib@npm:^2.4.0, tslib@npm:^2.5.0, tslib@npm:^2.6.0, tslib@npm:^2.6.1, tslib@npm:^2.6.2":
   version: 2.6.2
   resolution: "tslib@npm:2.6.2"
   checksum: 329ea56123005922f39642318e3d1f0f8265d1e7fcb92c633e0809521da75eeaca28d2cf96d7248229deb40e5c19adf408259f4b9640afd20d13aecc1430f3ad
@@ -1760,7 +1758,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"undici@npm:^5.22.1":
+"undici@npm:^5.23.0":
   version: 5.23.0
   resolution: "undici@npm:5.23.0"
   dependencies:
@@ -1840,10 +1838,10 @@ __metadata:
     "@sapphire/discord.js-utilities": 7.0.1
     "@sapphire/fetch": ^2.4.1
     "@sapphire/framework": ^4.5.2
-    "@sapphire/plugin-api": ^5.1.0
-    "@sapphire/plugin-editable-commands": ^3.0.2
-    "@sapphire/plugin-logger": ^3.0.5
-    "@sapphire/plugin-subcommands": ^4.1.0
+    "@sapphire/plugin-api": ^5.1.1
+    "@sapphire/plugin-editable-commands": ^3.0.3
+    "@sapphire/plugin-logger": ^3.0.6
+    "@sapphire/plugin-subcommands": ^4.1.1
     "@sapphire/prettier-config": ^2.0.0
     "@sapphire/time-utilities": ^1.7.10
     "@sapphire/ts-config": ^4.0.1
