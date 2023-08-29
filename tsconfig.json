@@ -1,9 +1,14 @@
 {
-  "extends": "@sapphire/ts-config/extra-strict",
+  "extends": [
+    "@sapphire/ts-config",
+    "@sapphire/ts-config/extra-strict",
+    "@sapphire/ts-config/bundler",
+    "@sapphire/ts-config/verbatim",
+    "@sapphire/ts-config/decorators"
+  ],
   "compilerOptions": {
     "rootDir": "src",
     "outDir": "dist",
-    "moduleResolution": "node16",
     "tsBuildInfoFile": "dist/.tsbuildinfo"
   },
   "include": ["src"]
