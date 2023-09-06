@@ -17,6 +17,7 @@ setup({ path: new URL('.env', srcDir) });
 inspect.defaultOptions.depth = 1;
 
 ApplicationCommandRegistries.setDefaultBehaviorWhenNotIdentical(RegisterBehavior.BulkOverwrite);
+ApplicationCommandRegistries.setDefaultGuildIds(['838895946397646850']);
 
 // Enable colorette
 colorette.createColors({ useColor: true });

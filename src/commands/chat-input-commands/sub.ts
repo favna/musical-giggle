@@ -20,21 +20,19 @@ export class UserCommand extends Subcommand {
   }
 
   public override registerApplicationCommands(registry: Subcommand.Registry) {
-    registry.registerChatInputCommand(
-      (builder) =>
-        builder //
-          .setName(this.name)
-          .setDescription(this.description)
-          .addSubcommandGroup((input) =>
-            input
-              .setName('config')
-              .setDescription('Config group')
-              .addSubcommand((input) => input.setName('edit').setDescription('Edit subcommand'))
-              .addSubcommand((input) => input.setName('show').setDescription('[Default] Show subcommand'))
-              .addSubcommand((input) => input.setName('remove').setDescription('Remove subcommand'))
-              .addSubcommand((input) => input.setName('reset').setDescription('Reset subcommand'))
-          ),
-      { guildIds: ['838895946397646850'] }
+    registry.registerChatInputCommand((builder) =>
+      builder //
+        .setName(this.name)
+        .setDescription(this.description)
+        .addSubcommandGroup((input) =>
+          input
+            .setName('config')
+            .setDescription('Config group')
+            .addSubcommand((input) => input.setName('edit').setDescription('Edit subcommand'))
+            .addSubcommand((input) => input.setName('show').setDescription('[Default] Show subcommand'))
+            .addSubcommand((input) => input.setName('remove').setDescription('Remove subcommand'))
+            .addSubcommand((input) => input.setName('reset').setDescription('Reset subcommand'))
+        )
     );
   }
 
