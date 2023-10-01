@@ -393,19 +393,19 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:*, @types/node@npm:^20.6.4":
-  version: 20.6.4
-  resolution: "@types/node@npm:20.6.4"
-  checksum: 5fdf81c8760b620a3f3b2cdac1688008f0c73a00af98e067b4621a572d39b831eaeee8fbd7300cd06667dec31d8b032fbb8e1bbedae56ec6ff1230a338b4e8a5
+"@types/node@npm:*, @types/node@npm:^20.8.0":
+  version: 20.8.0
+  resolution: "@types/node@npm:20.8.0"
+  checksum: ebad6342d54238a24bf980d7750117a5d67749c9b72cbb7a974a1e932c39034aa3a810d669e007e8a5071782a253aa069a187b614407a382403c9826e837c849
   languageName: node
   linkType: hard
 
-"@types/ws@npm:^8.5.5":
-  version: 8.5.5
-  resolution: "@types/ws@npm:8.5.5"
+"@types/ws@npm:^8.5.5, @types/ws@npm:^8.5.6":
+  version: 8.5.6
+  resolution: "@types/ws@npm:8.5.6"
   dependencies:
     "@types/node": "*"
-  checksum: d00bf8070e6938e3ccf933010921c6ce78ac3606696ce37a393b27a9a603f7bd93ea64f3c5fa295a2f743575ba9c9a9fdb904af0f5fe2229bf2adf0630386e4a
+  checksum: 7addb0c5fa4e7713d5209afb8a90f1852b12c02cb537395adf7a05fbaf21205dc5f7c110fd5ad6f3dbf147112cbff33fb11d8633059cb344f0c14f595b1ea1fb
   languageName: node
   linkType: hard
 
@@ -676,10 +676,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"discord-api-types@npm:^0.37.55, discord-api-types@npm:^0.37.57":
-  version: 0.37.57
-  resolution: "discord-api-types@npm:0.37.57"
-  checksum: c83c66bfc63c24bb17827a6e4c6516988b22472d99a8b0c9216bc5e826bdfec4d7b6a79efd934a587809f90bc7ee6f989fbfcbb7d825441676e544908dd18959
+"discord-api-types@npm:^0.37.55, discord-api-types@npm:^0.37.58":
+  version: 0.37.58
+  resolution: "discord-api-types@npm:0.37.58"
+  checksum: b830d7d2540357aa49321ee9ea353c5ecc32a70e1e2cdae9d8d9a0060cb4a730b7608070b38d8cf2b890bb80c0d2ff8f163907eb71127c3b6e850f26505426c6
   languageName: node
   linkType: hard
 
@@ -1848,10 +1848,10 @@ __metadata:
     "@sapphire/type": ^2.4.0
     "@sapphire/utilities": ^3.13.0
     "@skyra/env-utilities": ^1.2.1
-    "@types/node": ^20.6.4
-    "@types/ws": ^8.5.5
+    "@types/node": ^20.8.0
+    "@types/ws": ^8.5.6
     colorette: ^2.0.20
-    discord-api-types: ^0.37.57
+    discord-api-types: ^0.37.58
     discord.js: ^14.13.0
     prettier: ^3.0.3
     tsc-watch: ^6.0.4
