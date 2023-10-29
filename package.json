@@ -40,5 +40,5 @@
     "watch:start": "tsc-watch --onSuccess \"yarn start\"",
     "format": "prettier --write ."
   },
-  "packageManager": "yarn@4.0.0"
+  "packageManager": "yarn@4.0.1"
 }

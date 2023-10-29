@@ -400,16 +400,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:*":
-  version: 20.8.7
-  resolution: "@types/node@npm:20.8.7"
-  dependencies:
-    undici-types: "npm:~5.25.1"
-  checksum: a347ac7e6a9748ffff018ca01142ba625e774cb0b53785abb58b16a5a8468cc9b7656686dbe4c39c2f3fc477439994ee8aeae9b80ced86f320598bafaf83f802
-  languageName: node
-  linkType: hard
-
-"@types/node@npm:^20.8.9":
+"@types/node@npm:*, @types/node@npm:^20.8.9":
   version: 20.8.9
   resolution: "@types/node@npm:20.8.9"
   dependencies:
@@ -694,14 +685,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"discord-api-types@npm:^0.37.55":
-  version: 0.37.60
-  resolution: "discord-api-types@npm:0.37.60"
-  checksum: 13e7e860b6a2b80964227a05c6e0f20b87916b62389c4b641cbbe7ff760960b573721ff42c12dc3bcef0e8e11ee04062fd401852141aa29174339914070be313
-  languageName: node
-  linkType: hard
-
-"discord-api-types@npm:^0.37.61":
+"discord-api-types@npm:^0.37.55, discord-api-types@npm:^0.37.61":
   version: 0.37.61
   resolution: "discord-api-types@npm:0.37.61"
   checksum: f11d593722ab8ba72c07fd841d62484f22c30e36f4ce6b644f8bbf48422d20b0cd6acbf126d60aa2c535e4bd55df694745cc730c6c0382717dc10b2a81fb2805
@@ -1771,13 +1755,6 @@ __metadata:
     tsc: bin/tsc
     tsserver: bin/tsserver
   checksum: f79cc2ba802c94c2b78dbb00d767a10adb67368ae764709737dc277273ec148aa4558033a03ce901406b35fddf4eac46dabc94a1e1d12d2587e2b9cfe5707b4a
-  languageName: node
-  linkType: hard
-
-"undici-types@npm:~5.25.1":
-  version: 5.25.3
-  resolution: "undici-types@npm:5.25.3"
-  checksum: 9a57f2dd6fecb2d0f7d9b86aa6f417609a0ffc73247a95aa25c078cf36cbbfe6c164b63b8dace7ad01126e6510f284c185b69c78356bb1d6b279f195acffcaf4
   languageName: node
   linkType: hard
 
