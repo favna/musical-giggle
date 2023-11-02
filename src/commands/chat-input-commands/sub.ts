@@ -1,19 +1,16 @@
+import { PaginatedMessage } from '@sapphire/discord.js-utilities';
 import { Subcommand } from '@sapphire/plugin-subcommands';
+import { EmbedBuilder } from 'discord.js';
 
 export class UserCommand extends Subcommand {
   public constructor(context: Subcommand.Context) {
     super(context, {
+      name: 'aiura',
       description: 'Chat Input Command with some subcommand groups',
       subcommands: [
         {
-          type: 'group',
-          name: 'config',
-          entries: [
-            { name: 'edit', chatInputRun: 'configEdit', preconditions: ['NSFW'] },
-            { name: 'show', chatInputRun: 'configShow', default: true },
-            { name: 'remove', chatInputRun: 'configRemove' },
-            { name: 'reset', chatInputRun: 'configReset' }
-          ]
+          name: 'credits',
+          chatInputRun: 'chatInputCredits'
         }
       ]
     });
@@ -24,31 +21,26 @@ export class UserCommand extends Subcommand {
       builder //
         .setName(this.name)
         .setDescription(this.description)
-        .addSubcommandGroup((input) =>
-          input
-            .setName('config')
-            .setDescription('Config group')
-            .addSubcommand((input) => input.setName('edit').setDescription('Edit subcommand'))
-            .addSubcommand((input) => input.setName('show').setDescription('[Default] Show subcommand'))
-            .addSubcommand((input) => input.setName('remove').setDescription('Remove subcommand'))
-            .addSubcommand((input) => input.setName('reset').setDescription('Reset subcommand'))
-        )
+        .addSubcommand((input) => input.setName('credits').setDescription('Shows credits'))
     );
   }
 
-  public async configShow(interaction: Subcommand.ChatInputCommandInteraction) {
-    return interaction.reply('Showing!');
+  public async chatInputCredits(interaction: Subcommand.ChatInputCommandInteraction) {
+    await interaction.deferReply();
+    await this.creditsBuilder().run(interaction);
   }
 
-  public async configEdit(interaction: Subcommand.ChatInputCommandInteraction) {
-    return interaction.reply('Editing!');
-  }
-
-  public async configRemove(interaction: Subcommand.ChatInputCommandInteraction) {
-    return interaction.reply('Removing!');
-  }
-
-  public async configReset(interaction: Subcommand.ChatInputCommandInteraction) {
-    return interaction.reply('Resetting!');
+  /**
+   * Generates an embed message containing the credits for the bot.
+   *
+   * @return The generated embed message containing the credits.
+   */
+  creditsBuilder(): PaginatedMessage {
+    return new PaginatedMessage({
+      template: new EmbedBuilder().setColor('Blue').setTitle('Credits').setTimestamp()
+    })
+      .setSelectMenuOptions((pageIndex) => ({ label: ['Page', pageIndex + 1].join(' '), value: pageIndex.toString() }))
+      .addPageEmbed((embed) => embed.setDescription('Page 1'))
+      .addPageEmbed((embed) => embed.setDescription('Page 2'));
   }
 }
