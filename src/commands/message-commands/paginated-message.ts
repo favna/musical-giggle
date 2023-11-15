@@ -13,7 +13,7 @@ export class UserCommand extends Command {
   public override async messageRun(message: Message) {
     const display = new PaginatedMessage({
       template: new EmbedBuilder()
-        .setFooter({ text: 'U200b', iconURL: message.author.displayAvatarURL() })
+        .setFooter({ text: 'footer', iconURL: message.author.displayAvatarURL() })
         .setColor('Red')
         .setAuthor({ name: `Moderation history for Favna#0001`, iconURL: message.author.displayAvatarURL() })
         .setTimestamp()
