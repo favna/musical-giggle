@@ -1,7 +1,7 @@
 import { ApiRequest, ApiResponse, methods, Route } from '@sapphire/plugin-api';
 
 export class UserRoute extends Route {
-  public constructor(context: Route.Context, options?: Route.Options) {
+  public constructor(context: Route.LoaderContext, options?: Route.Options) {
     super(context, {
       ...options,
       route: ''

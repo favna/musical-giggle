@@ -9,7 +9,7 @@ const ignoredCodes = [RESTJSONErrorCodes.UnknownChannel, RESTJSONErrorCodes.Unkn
 const OWNERS = envParseArray('OWNERS');
 
 export class UserListener extends Listener<typeof Events.ChatInputCommandError> {
-  public constructor(context: Listener.Context) {
+  public constructor(context: Listener.LoaderContext) {
     super(context, {
       event: Events.ChatInputCommandError
     });

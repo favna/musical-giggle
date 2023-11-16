@@ -2,7 +2,7 @@ import { Subcommand } from '@sapphire/plugin-subcommands';
 import type { Message } from 'discord.js';
 
 export class UserCommand extends Subcommand {
-  public constructor(context: Subcommand.Context) {
+  public constructor(context: Subcommand.LoaderContext) {
     super(context, {
       aliases: ['sg'],
       description: 'A message command with some subcommand groups',

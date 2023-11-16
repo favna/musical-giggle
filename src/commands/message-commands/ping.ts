@@ -3,7 +3,7 @@ import { send } from '@sapphire/plugin-editable-commands';
 import type { Message } from 'discord.js';
 
 export class UserCommand extends Command {
-  public constructor(context: Command.Context) {
+  public constructor(context: Command.LoaderContext) {
     super(context, {
       description: 'ping pong'
     });

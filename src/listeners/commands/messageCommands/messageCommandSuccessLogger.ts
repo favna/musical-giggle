@@ -5,7 +5,7 @@ import { cyan } from 'colorette';
 import type { Guild, User } from 'discord.js';
 
 export class UserEvent extends Listener<typeof Events.MessageCommandSuccess> {
-  public constructor(context: Listener.Context) {
+  public constructor(context: Listener.LoaderContext) {
     super(context, {
       event: Events.MessageCommandSuccess
     });

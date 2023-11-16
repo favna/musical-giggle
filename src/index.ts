@@ -1,5 +1,7 @@
 import './lib/setup.js';
+
 import { LogLevel, SapphireClient } from '@sapphire/framework';
+import { Time } from '@sapphire/time-utilities';
 import { GatewayIntentBits } from 'discord.js';
 
 const client = new SapphireClient({
@@ -8,6 +10,15 @@ const client = new SapphireClient({
   caseInsensitivePrefixes: true,
   loadDefaultErrorListeners: true,
   loadMessageCommandListeners: true,
+  loadSubcommandErrorListeners: true,
+  subcommandDefaultCooldown: {
+    limit: 1,
+    delay: Time.Second * 5
+  },
+  defaultCooldown: {
+    limit: 1,
+    delay: Time.Second * 5
+  },
   logger: {
     level: LogLevel.Debug
   },
@@ -20,7 +31,7 @@ const client = new SapphireClient({
   intents: [
     GatewayIntentBits.DirectMessageReactions,
     GatewayIntentBits.DirectMessages,
-    GatewayIntentBits.GuildBans,
+    GatewayIntentBits.GuildModeration,
     GatewayIntentBits.GuildEmojisAndStickers,
     GatewayIntentBits.GuildMembers,
     GatewayIntentBits.GuildMessageReactions,

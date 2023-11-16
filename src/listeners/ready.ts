@@ -1,4 +1,4 @@
-import type { ListenerOptions, PieceContext } from '@sapphire/framework';
+import type { ListenerOptions } from '@sapphire/framework';
 import { Listener, Store } from '@sapphire/framework';
 import { blue, gray, green, magenta, magentaBright, white, yellow } from 'colorette';
 
@@ -7,7 +7,7 @@ const dev = process.env.NODE_ENV !== 'production';
 export class UserEvent extends Listener {
   private readonly style = dev ? yellow : blue;
 
-  public constructor(context: PieceContext, options?: ListenerOptions) {
+  public constructor(context: Listener.LoaderContext, options?: ListenerOptions) {
     super(context, {
       ...options,
       once: true

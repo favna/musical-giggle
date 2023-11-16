@@ -4,7 +4,7 @@ import { cyan } from 'colorette';
 import type { APIUser, Guild, User } from 'discord.js';
 
 export class UserListener extends Listener {
-  public constructor(context: Listener.Context) {
+  public constructor(context: Listener.LoaderContext) {
     super(context, {
       event: Events.ChatInputCommandSuccess
     });

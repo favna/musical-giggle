@@ -6,7 +6,7 @@ import { codeBlock, hideLinkEmbed, userMention, type Message } from 'discord.js'
 const OWNERS = envParseArray('OWNERS');
 
 export class UserEvent extends Listener<typeof SubcommandPluginEvents.MessageSubcommandError> {
-  public constructor(context: Listener.Context) {
+  public constructor(context: Listener.LoaderContext) {
     super(context, {
       event: SubcommandPluginEvents.MessageSubcommandError
     });

@@ -2,7 +2,7 @@ import { Listener, UserError } from '@sapphire/framework';
 import { SubcommandPluginEvents, type ChatInputSubcommandDeniedPayload } from '@sapphire/plugin-subcommands';
 
 export class UserListener extends Listener<typeof SubcommandPluginEvents.ChatInputSubcommandDenied> {
-  public constructor(context: Listener.Context) {
+  public constructor(context: Listener.LoaderContext) {
     super(context, {
       event: SubcommandPluginEvents.ChatInputSubcommandDenied
     });

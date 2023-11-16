@@ -1,7 +1,7 @@
 import { Subcommand } from '@sapphire/plugin-subcommands';
 
 export class UserCommand extends Subcommand {
-  public constructor(context: Subcommand.Context) {
+  public constructor(context: Subcommand.LoaderContext) {
     super(context, {
       description: 'Chat Input Command with some subcommand groups',
       subcommands: [

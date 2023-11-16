@@ -4,7 +4,7 @@ import { Subcommand } from '@sapphire/plugin-subcommands';
 import { EmbedBuilder, PermissionFlagsBits, type Message } from 'discord.js';
 
 export class UserCommand extends Subcommand {
-  public constructor(context: Subcommand.Context) {
+  public constructor(context: Subcommand.LoaderContext) {
     super(context, {
       aliases: ['cwd'],
       description: 'A basic message command with some subcommands',

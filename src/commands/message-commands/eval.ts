@@ -5,7 +5,7 @@ import type { Message } from 'discord.js';
 import { inspect } from 'node:util';
 
 export class UserCommand extends Command {
-  public constructor(context: Command.Context) {
+  public constructor(context: Command.LoaderContext) {
     super(context, {
       aliases: ['ev'],
       description: 'Evals any JavaScript code',

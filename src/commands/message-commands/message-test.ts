@@ -3,7 +3,7 @@ import { Command } from '@sapphire/framework';
 import { ButtonStyle, ComponentType, EmbedBuilder, type Message } from 'discord.js';
 
 export class UserCommand extends Command {
-  public constructor(context: Command.Context) {
+  public constructor(context: Command.LoaderContext) {
     super(context, {
       description: 'malleable test command'
     });
