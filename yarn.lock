@@ -202,9 +202,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@sapphire/framework@npm:^4.8.1":
-  version: 4.8.1
-  resolution: "@sapphire/framework@npm:4.8.1"
+"@sapphire/framework@npm:^4.8.2":
+  version: 4.8.2
+  resolution: "@sapphire/framework@npm:4.8.2"
   dependencies:
     "@discordjs/builders": "npm:^1.7.0"
     "@sapphire/discord-utilities": "npm:^3.2.0"
@@ -215,7 +215,7 @@ __metadata:
     "@sapphire/result": "npm:^2.6.4"
     "@sapphire/stopwatch": "npm:^1.5.0"
     "@sapphire/utilities": "npm:^3.13.0"
-  checksum: e594dfaa2c527be44e4816bf2c9baf3a9f9e28f65d0df3c432f574f2d688366af256928de58a3fc789bba05bc085d9320649462b21fb518ac84c065f7135d7d0
+  checksum: cbeee0fc1b7055a61af079b450e7830d90b076c68b20f4e30451a872444b292e67314eafe69f3f2958892dd2d81a816bcbde11ab5736265854e6619a387b3111
   languageName: node
   linkType: hard
 
@@ -407,21 +407,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:*":
-  version: 20.9.0
-  resolution: "@types/node@npm:20.9.0"
+"@types/node@npm:*, @types/node@npm:^20.9.2":
+  version: 20.9.2
+  resolution: "@types/node@npm:20.9.2"
   dependencies:
     undici-types: "npm:~5.26.4"
-  checksum: a934f7645ed117a27857147403b0c657ffbca578c8f280e4c21d27dfb43e58dc4f24c4319d4335b8a4fa08e28fb2dc905a5bd5e4bc8878047164c56c1b162139
-  languageName: node
-  linkType: hard
-
-"@types/node@npm:^20.9.1":
-  version: 20.9.1
-  resolution: "@types/node@npm:20.9.1"
-  dependencies:
-    undici-types: "npm:~5.26.4"
-  checksum: b2b3f9ee31db63ccd3d48e5597d359c3385879679f37a749e473b47068aae181d0e280f39f153d75ce704640b3ec09d029aecd2a686e5658fb866254dc7e781b
+  checksum: 8bab2870bfc02efc988c53dfb0149634f8feb824132cc7f20b36f3d55d89ef893e3a43d545524a5cb3a284f4ce68ae4181d75a4a39cee6b79c586d719e6b7461
   languageName: node
   linkType: hard
 
@@ -1844,7 +1835,7 @@ __metadata:
     "@sapphire/discord-utilities": "npm:^3.2.0"
     "@sapphire/discord.js-utilities": "npm:7.1.2"
     "@sapphire/fetch": "npm:^2.4.1"
-    "@sapphire/framework": "npm:^4.8.1"
+    "@sapphire/framework": "npm:^4.8.2"
     "@sapphire/plugin-api": "npm:^5.2.0"
     "@sapphire/plugin-editable-commands": "npm:^3.1.0"
     "@sapphire/plugin-logger": "npm:^3.0.7"
@@ -1855,7 +1846,7 @@ __metadata:
     "@sapphire/type": "npm:^2.4.1"
     "@sapphire/utilities": "npm:^3.13.0"
     "@skyra/env-utilities": "npm:^1.2.1"
-    "@types/node": "npm:^20.9.1"
+    "@types/node": "npm:^20.9.2"
     "@types/ws": "npm:^8.5.9"
     colorette: "npm:^2.0.20"
     discord-api-types: "npm:^0.37.63"
