@@ -202,9 +202,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@sapphire/framework@npm:^4.8.2":
-  version: 4.8.2
-  resolution: "@sapphire/framework@npm:4.8.2"
+"@sapphire/framework@npm:^4.8.3":
+  version: 4.8.3
+  resolution: "@sapphire/framework@npm:4.8.3"
   dependencies:
     "@discordjs/builders": "npm:^1.7.0"
     "@sapphire/discord-utilities": "npm:^3.2.0"
@@ -215,7 +215,7 @@ __metadata:
     "@sapphire/result": "npm:^2.6.4"
     "@sapphire/stopwatch": "npm:^1.5.0"
     "@sapphire/utilities": "npm:^3.13.0"
-  checksum: cbeee0fc1b7055a61af079b450e7830d90b076c68b20f4e30451a872444b292e67314eafe69f3f2958892dd2d81a816bcbde11ab5736265854e6619a387b3111
+  checksum: be0cf868e9b0477f63a06acd2e127844c087441cde0e83b25366d350d7483a070575e653189f4561d7be673f4b73557bec9951b4e27511a054f011dc56239e38
   languageName: node
   linkType: hard
 
@@ -407,12 +407,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:*, @types/node@npm:^20.10.0":
-  version: 20.10.0
-  resolution: "@types/node@npm:20.10.0"
+"@types/node@npm:*, @types/node@npm:^20.10.2":
+  version: 20.10.2
+  resolution: "@types/node@npm:20.10.2"
   dependencies:
     undici-types: "npm:~5.26.4"
-  checksum: c7d5ddbdbf3491e2363135c9611eb6bfae90eda2957279237fa232bcb29cd0df1cc3ee149d6de9915b754262a531ee2d57d33c9ecd58d763e8ad4856113822f3
+  checksum: e88d0e92870ec4880642cc39250903a098443d791e864a08d08f4e7fdca0c4c9c0233a6fd98bec356f0ebabc6551152a4590d1c9c34b73a95c2b33935f59185f
   languageName: node
   linkType: hard
 
@@ -1844,7 +1844,7 @@ __metadata:
     "@sapphire/discord-utilities": "npm:^3.2.0"
     "@sapphire/discord.js-utilities": "npm:7.1.2"
     "@sapphire/fetch": "npm:^2.4.1"
-    "@sapphire/framework": "npm:^4.8.2"
+    "@sapphire/framework": "npm:^4.8.3"
     "@sapphire/plugin-api": "npm:^5.2.0"
     "@sapphire/plugin-editable-commands": "npm:^3.1.0"
     "@sapphire/plugin-logger": "npm:^3.0.7"
@@ -1855,7 +1855,7 @@ __metadata:
     "@sapphire/type": "npm:^2.4.1"
     "@sapphire/utilities": "npm:^3.13.0"
     "@skyra/env-utilities": "npm:^1.2.1"
-    "@types/node": "npm:^20.10.0"
+    "@types/node": "npm:^20.10.2"
     "@types/ws": "npm:^8.5.10"
     colorette: "npm:^2.0.20"
     discord-api-types: "npm:^0.37.65"
