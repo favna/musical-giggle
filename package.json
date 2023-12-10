@@ -13,7 +13,7 @@
     "@sapphire/framework": "^4.8.5",
     "@sapphire/plugin-api": "^5.2.0",
     "@sapphire/plugin-editable-commands": "^3.1.0",
-    "@sapphire/plugin-logger": "^3.0.7",
+    "@sapphire/plugin-logger": "^4.0.1",
     "@sapphire/plugin-subcommands": "^5.1.0",
     "@sapphire/time-utilities": "^1.7.11",
     "@sapphire/type": "^2.4.3",
