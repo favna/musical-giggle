@@ -28,7 +28,7 @@
     "@sapphire/ts-config": "^5.0.0",
     "@types/node": "^20.10.4",
     "@types/ws": "^8.5.10",
-    "prettier": "^3.1.0",
+    "prettier": "^3.1.1",
     "tsc-watch": "^6.0.4",
     "typescript": "^5.3.3"
   },
