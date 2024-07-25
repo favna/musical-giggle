@@ -2,6 +2,7 @@ import './lib/setup.js';
 
 import { LogLevel, SapphireClient } from '@sapphire/framework';
 import { Time } from '@sapphire/time-utilities';
+import { envParseArray } from '@skyra/env-utilities';
 import { GatewayIntentBits } from 'discord.js';
 
 const client = new SapphireClient({
@@ -17,7 +18,8 @@ const client = new SapphireClient({
   },
   defaultCooldown: {
     limit: 1,
-    delay: Time.Second * 5
+    delay: Time.Second * 5,
+    filteredUsers: envParseArray('OWNERS')
   },
   logger: {
     level: LogLevel.Debug
