@@ -403,12 +403,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:*, @types/node@npm:^20.16.0":
-  version: 20.16.0
-  resolution: "@types/node@npm:20.16.0"
+"@types/node@npm:*, @types/node@npm:^20.16.1":
+  version: 20.16.1
+  resolution: "@types/node@npm:20.16.1"
   dependencies:
     undici-types: "npm:~6.19.2"
-  checksum: 10/ad6d50982d1ced0f29ed1fc01b6ed24b03dac15f11f0ff0806af0c74d658be95ea4faef9b1b05c04e7d112c562126449326f44f9819875a6e45036b929a1bc94
+  checksum: 10/9bae1dffd2094694147a91ebec51dc89a60a607d16d47a0d770320f1a75d3ba58663708fd93c37954a63acb701a4e0fd64245139c57ae810d3ad524e75481d4e
   languageName: node
   linkType: hard
 
@@ -667,10 +667,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"discord-api-types@npm:^0.37.84, discord-api-types@npm:^0.37.94":
-  version: 0.37.94
-  resolution: "discord-api-types@npm:0.37.94"
-  checksum: 10/dc3a15a4dd345c1da84e9ec5f4bb29ff4757b9fd9a27395719b99bd3bed0ad8186fc07ff72dbf2de219ae807ddebf1b085a26f1b953492652a009b8102f9561f
+"discord-api-types@npm:^0.37.84, discord-api-types@npm:^0.37.97":
+  version: 0.37.97
+  resolution: "discord-api-types@npm:0.37.97"
+  checksum: 10/94eea4b95ebb7ab89cce325c5c5654ce7fd3f1e17efa997fd375b7fe81cd5e872c097cf98cfc9d4d7ff233c924f501d812516a048913023bde02f3bbba21849b
   languageName: node
   linkType: hard
 
@@ -1811,10 +1811,10 @@ __metadata:
     "@sapphire/type": "npm:^2.5.1"
     "@sapphire/utilities": "npm:^3.17.0"
     "@skyra/env-utilities": "npm:^1.3.0"
-    "@types/node": "npm:^20.16.0"
+    "@types/node": "npm:^20.16.1"
     "@types/ws": "npm:^8.5.12"
     colorette: "npm:^2.0.20"
-    discord-api-types: "npm:^0.37.94"
+    discord-api-types: "npm:^0.37.97"
     discord.js: "npm:^14.15.3"
     prettier: "npm:^3.3.3"
     tsc-watch: "npm:^6.2.0"
