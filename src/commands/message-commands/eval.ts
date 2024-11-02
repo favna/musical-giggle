@@ -16,6 +16,8 @@ export class UserCommand extends Command {
     });
   }
   public override async messageRun(message: Message, args: Args) {
+    if (!message.channel.isSendable()) return;
+
     const code = await args.rest('string');
 
     const { result, success, type } = await this.eval(message, code, {

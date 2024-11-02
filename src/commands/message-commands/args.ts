@@ -9,6 +9,8 @@ export class UserCommand extends Command {
   }
 
   public override async messageRun(message: Message, args: Args) {
+    if (!message.channel.isSendable()) return;
+
     if (args.finished) {
       return message.channel.send("Hey you didn't give me any arguments");
     }

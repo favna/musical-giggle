@@ -21,18 +21,26 @@ export class UserCommand extends Subcommand {
     });
   }
   public async configShow(message: Message) {
+    if (!message.channel.isSendable()) return;
+
     return message.channel.send('Showing!');
   }
 
   public async configEdit(message: Message) {
+    if (!message.channel.isSendable()) return;
+
     return message.channel.send('Editing!');
   }
 
   public async configRemove(message: Message) {
+    if (!message.channel.isSendable()) return;
+
     return message.channel.send('Removing!');
   }
 
   public async configReset(message: Message) {
+    if (!message.channel.isSendable()) return;
+
     return message.channel.send('Resetting!');
   }
 }
