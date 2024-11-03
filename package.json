@@ -25,7 +25,7 @@
   "devDependencies": {
     "@sapphire/prettier-config": "^2.0.0",
     "@sapphire/ts-config": "^5.0.1",
-    "@types/node": "^20.17.6",
+    "@types/node": "^22.8.7",
     "@types/ws": "^8.5.13",
     "prettier": "^3.3.3",
     "tsc-watch": "^6.2.0",
