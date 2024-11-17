@@ -1662,9 +1662,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"tsc-watch@npm:^6.2.0":
-  version: 6.2.0
-  resolution: "tsc-watch@npm:6.2.0"
+"tsc-watch@npm:^6.2.1":
+  version: 6.3.0
+  resolution: "tsc-watch@npm:6.3.0"
   dependencies:
     cross-spawn: "npm:^7.0.3"
     node-cleanup: "npm:^2.1.2"
@@ -1674,7 +1674,7 @@ __metadata:
     typescript: "*"
   bin:
     tsc-watch: dist/lib/tsc-watch.js
-  checksum: 10/53a81d3c77f71e40a54179b5a7f25e06d0a2fc0a59f9a6406a04e187751baa1995b6854cb6e0881519c8139c6cbd40c140bc862d7aed4cf9474a827c39567157
+  checksum: 10/4146e1229c56370e9d881efecb9f451e65908cba454000ce8de4b87e0f6e726e8f595737d65be56b6401f078b516a1607870ab7ec9c1ebbaebbe21667535c567
   languageName: node
   linkType: hard
 
@@ -1836,7 +1836,7 @@ __metadata:
     colorette: "npm:^2.0.20"
     discord.js: "npm:^14.16.3"
     prettier: "npm:^3.3.3"
-    tsc-watch: "npm:^6.2.0"
+    tsc-watch: "npm:^6.2.1"
     typescript: "npm:~5.4.5"
   languageName: unknown
   linkType: soft
