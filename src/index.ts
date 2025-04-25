@@ -2,7 +2,7 @@ import './lib/setup.js';
 
 import { LogLevel, SapphireClient } from '@sapphire/framework';
 import { Time } from '@sapphire/time-utilities';
-import { GatewayIntentBits } from 'discord.js';
+import { GatewayIntentBits, OAuth2Scopes } from 'discord.js';
 
 const client = new SapphireClient({
   defaultPrefix: 'dr!',
@@ -11,22 +11,23 @@ const client = new SapphireClient({
   loadDefaultErrorListeners: true,
   loadMessageCommandListeners: true,
   loadSubcommandErrorListeners: true,
-  subcommandDefaultCooldown: {
-    limit: 1,
-    delay: Time.Second * 5
-  },
-  defaultCooldown: {
-    limit: 1,
-    delay: Time.Second * 5
-  },
-  logger: {
-    level: LogLevel.Debug
-  },
   api: {
-    listenOptions: {
-      port: 6000
-    }
+    prefix: '/api/',
+    origin: '*',
+    automaticallyConnect: true,
+    auth: {
+      id: 'auth_id',
+      secret: 'auth_secret',
+      cookie: 'SAPPHIRE_AUTH',
+      redirect: 'redirect_uri',
+      scopes: [OAuth2Scopes.Identify, OAuth2Scopes.Guilds],
+      domainOverwrite: process.env.NODE_ENV === 'development' ? '127.0.0.1' : undefined
+    },
+    listenOptions: { port: 3000 }
   },
+  subcommandDefaultCooldown: { limit: 1, delay: Time.Second * 5 },
+  defaultCooldown: { limit: 1, delay: Time.Second * 5 },
+  logger: { level: LogLevel.Debug },
   shards: 'auto',
   intents: [
     GatewayIntentBits.DirectMessageReactions,

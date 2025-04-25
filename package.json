@@ -10,7 +10,7 @@
     "@sapphire/discord-utilities": "^3.4.4",
     "@sapphire/discord.js-utilities": "7.3.2",
     "@sapphire/fetch": "^3.0.5",
-    "@sapphire/framework": "^5.3.3",
+    "@sapphire/framework": "^5.3.4",
     "@sapphire/plugin-api": "^8.0.0",
     "@sapphire/plugin-editable-commands": "^4.0.4",
     "@sapphire/plugin-logger": "^4.0.2",
@@ -25,10 +25,10 @@
   "devDependencies": {
     "@sapphire/prettier-config": "^2.0.0",
     "@sapphire/ts-config": "^5.0.1",
-    "@types/node": "^22.14.1",
+    "@types/node": "^22.15.2",
     "@types/ws": "^8.18.1",
     "prettier": "^3.5.3",
-    "tsc-watch": "6.2.1",
+    "tsc-watch": "6.3.0",
     "typescript": "~5.4.5"
   },
   "scripts": {

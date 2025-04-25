@@ -206,9 +206,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@sapphire/framework@npm:^5.3.3":
-  version: 5.3.3
-  resolution: "@sapphire/framework@npm:5.3.3"
+"@sapphire/framework@npm:^5.3.4":
+  version: 5.3.4
+  resolution: "@sapphire/framework@npm:5.3.4"
   dependencies:
     "@discordjs/builders": "npm:^1.10.1"
     "@sapphire/discord-utilities": "npm:^3.4.4"
@@ -219,7 +219,7 @@ __metadata:
     "@sapphire/result": "npm:^2.7.2"
     "@sapphire/stopwatch": "npm:^1.5.4"
     "@sapphire/utilities": "npm:^3.18.2"
-  checksum: 10/0f693792ef3b1ad267efb253f5f38320ea979d61ac4b60ce4c1fb8d9a0dbefcf2b242b3a7fb53a02c22cb0e409f23f91fc1be933d158a2792c17f12f3d06ac9d
+  checksum: 10/a473d0cc17ea73934b6d7268fa8ccac137f1caf9c96020ca70b3b071f5aad182961cf8795c8ef614c3cce0fb5d281359d4a354da21894f37875b0340e4cb002a
   languageName: node
   linkType: hard
 
@@ -404,12 +404,21 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:*, @types/node@npm:^22.14.1":
+"@types/node@npm:*":
   version: 22.14.1
   resolution: "@types/node@npm:22.14.1"
   dependencies:
     undici-types: "npm:~6.21.0"
   checksum: 10/561b1ad98ef5176d6da856ffbbe494f16655149f6a7d561de0423c8784910c81267d7d6459f59d68a97b3cbae9b5996b3b5dfe64f4de3de2239d295dcf4a4dcc
+  languageName: node
+  linkType: hard
+
+"@types/node@npm:^22.15.2":
+  version: 22.15.2
+  resolution: "@types/node@npm:22.15.2"
+  dependencies:
+    undici-types: "npm:~6.21.0"
+  checksum: 10/e22071571205413518aa3710644ed9603d8f4a417fc59f0e180240e1c05aaf7fb8feecdf553a2da305247b3533d03b58eab6e333115f01f581b9139a6b1dcd47
   languageName: node
   linkType: hard
 
@@ -1658,9 +1667,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"tsc-watch@npm:6.2.1":
-  version: 6.2.1
-  resolution: "tsc-watch@npm:6.2.1"
+"tsc-watch@npm:6.3.0":
+  version: 6.3.0
+  resolution: "tsc-watch@npm:6.3.0"
   dependencies:
     cross-spawn: "npm:^7.0.3"
     node-cleanup: "npm:^2.1.2"
@@ -1670,7 +1679,7 @@ __metadata:
     typescript: "*"
   bin:
     tsc-watch: dist/lib/tsc-watch.js
-  checksum: 10/ba6dfa6cb9fd2a28e892e5a51a2027166cab7f83c7921e7d7b189014e0ea10eebdc39304800d589871765ff2328178c322696e5dc504b0025a2d112a95c8b51b
+  checksum: 10/4146e1229c56370e9d881efecb9f451e65908cba454000ce8de4b87e0f6e726e8f595737d65be56b6401f078b516a1607870ab7ec9c1ebbaebbe21667535c567
   languageName: node
   linkType: hard
 
@@ -1823,7 +1832,7 @@ __metadata:
     "@sapphire/discord-utilities": "npm:^3.4.4"
     "@sapphire/discord.js-utilities": "npm:7.3.2"
     "@sapphire/fetch": "npm:^3.0.5"
-    "@sapphire/framework": "npm:^5.3.3"
+    "@sapphire/framework": "npm:^5.3.4"
     "@sapphire/plugin-api": "npm:^8.0.0"
     "@sapphire/plugin-editable-commands": "npm:^4.0.4"
     "@sapphire/plugin-logger": "npm:^4.0.2"
@@ -1834,12 +1843,12 @@ __metadata:
     "@sapphire/type": "npm:^2.6.0"
     "@sapphire/utilities": "npm:^3.18.2"
     "@skyra/env-utilities": "npm:^2.0.0"
-    "@types/node": "npm:^22.14.1"
+    "@types/node": "npm:^22.15.2"
     "@types/ws": "npm:^8.18.1"
     colorette: "npm:^2.0.20"
     discord.js: "npm:^14.18.0"
     prettier: "npm:^3.5.3"
-    tsc-watch: "npm:6.2.1"
+    tsc-watch: "npm:6.3.0"
     typescript: "npm:~5.4.5"
   languageName: unknown
   linkType: soft
