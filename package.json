@@ -7,8 +7,8 @@
   "type": "module",
   "dependencies": {
     "@sapphire/decorators": "^6.1.1",
-    "@sapphire/discord-utilities": "^3.4.4",
-    "@sapphire/discord.js-utilities": "7.3.2",
+    "@sapphire/discord-utilities": "^3.5.0",
+    "@sapphire/discord.js-utilities": "7.3.3",
     "@sapphire/fetch": "^3.0.5",
     "@sapphire/framework": "^5.3.4",
     "@sapphire/plugin-api": "^8.0.0",
@@ -20,12 +20,12 @@
     "@sapphire/utilities": "^3.18.2",
     "@skyra/env-utilities": "^2.0.0",
     "colorette": "^2.0.20",
-    "discord.js": "^14.18.0"
+    "discord.js": "^14.19.3"
   },
   "devDependencies": {
     "@sapphire/prettier-config": "^2.0.0",
     "@sapphire/ts-config": "^5.0.1",
-    "@types/node": "^22.15.2",
+    "@types/node": "^22.15.17",
     "@types/ws": "^8.18.1",
     "prettier": "^3.5.3",
     "tsc-watch": "6.3.0",
@@ -39,5 +39,5 @@
     "watch:start": "tsc-watch --onSuccess \"yarn start\"",
     "format": "prettier --write ."
   },
-  "packageManager": "yarn@4.9.0"
+  "packageManager": "yarn@4.9.1"
 }
