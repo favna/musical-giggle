@@ -25,7 +25,7 @@
   "devDependencies": {
     "@sapphire/prettier-config": "^2.0.0",
     "@sapphire/ts-config": "^5.0.1",
-    "@types/node": "^22.17.2",
+    "@types/node": "^22.18.0",
     "@types/ws": "^8.18.1",
     "prettier": "^3.6.2",
     "tsc-watch": "7.1.1",
@@ -39,5 +39,5 @@
     "watch:start": "tsc-watch --onSuccess \"yarn start\"",
     "format": "prettier --write ."
   },
-  "packageManager": "yarn@4.9.3"
+  "packageManager": "yarn@4.9.4"
 }
