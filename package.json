@@ -10,7 +10,7 @@
     "@sapphire/discord-utilities": "^3.5.0",
     "@sapphire/discord.js-utilities": "7.3.3",
     "@sapphire/fetch": "^3.0.5",
-    "@sapphire/framework": "^5.3.7",
+    "@sapphire/framework": "^5.4.0",
     "@sapphire/plugin-api": "^8.3.1",
     "@sapphire/plugin-editable-commands": "^4.0.4",
     "@sapphire/plugin-logger": "^4.1.0",
@@ -39,5 +39,5 @@
     "watch:start": "tsc-watch --onSuccess \"yarn start\"",
     "format": "prettier --write ."
   },
-  "packageManager": "yarn@4.10.3"
+  "packageManager": "yarn@4.11.0"
 }
