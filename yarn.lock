@@ -1820,7 +1820,7 @@ __metadata:
   resolution: "with-typescript-recommended@workspace:."
   dependencies:
     "@sapphire/decorators": "npm:^6.2.0"
-    "@sapphire/discord-utilities": "npm:^3.5.0"
+    "@sapphire/discord-utilities": "npm:^4.0.0"
     "@sapphire/discord.js-utilities": "npm:7.3.3"
     "@sapphire/fetch": "npm:^3.0.5"
     "@sapphire/framework": "npm:^5.5.0"
