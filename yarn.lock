@@ -2,7 +2,7 @@
 # Manual changes might be lost - proceed with caution!
 
 __metadata:
-  version: 8
+  version: 9
   cacheKey: 10
 
 "@discordjs/builders@npm:^1.13.0, @discordjs/builders@npm:^1.14.1":
@@ -701,9 +701,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"discord.js@npm:^14.26.2":
-  version: 14.26.2
-  resolution: "discord.js@npm:14.26.2"
+"discord.js@npm:^14.26.3":
+  version: 14.26.3
+  resolution: "discord.js@npm:14.26.3"
   dependencies:
     "@discordjs/builders": "npm:^1.14.1"
     "@discordjs/collection": "npm:1.5.3"
@@ -718,7 +718,7 @@ __metadata:
     magic-bytes.js: "npm:^1.13.0"
     tslib: "npm:^2.6.3"
     undici: "npm:6.24.1"
-  checksum: 10/8a599b0b5667c71be5926f76ec73998d9c264e2fcaea68bbbfa257ae39281027673fa1abf42fe9ebdd17d1f9de5c81c1c1bdfac41d97adbfecd2b603d54c93dd
+  checksum: 10/76cf0a6993c43d194c13a4902ac1591ff7a671b995162c925b02ecca6838f5ebdc6998bf51471888d12d86c8fdc20cd412b881928e257bcbabcafaa5328a7a61
   languageName: node
   linkType: hard
 
@@ -1384,12 +1384,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"prettier@npm:^3.0.0, prettier@npm:^3.8.2":
-  version: 3.8.2
-  resolution: "prettier@npm:3.8.2"
+"prettier@npm:^3.0.0, prettier@npm:^3.8.3":
+  version: 3.8.3
+  resolution: "prettier@npm:3.8.3"
   bin:
     prettier: bin/prettier.cjs
-  checksum: 10/fd784175bc600c07eb2c44d7ec4ee7133f95f26492adad61b6a15c06f438b858181faf096ab74163d7f49500ad80cff4479c6abb084e161a2e85a9df5974ecd1
+  checksum: 10/4b3b12cbb29e4c96bed936e5d070167552500c18d37676fb3e0caae6199c42860662608e4dc116230698f6e2bb0267ef2548158224c92d40f188d309d72fdd6f
   languageName: node
   linkType: hard
 
@@ -1844,8 +1844,8 @@ __metadata:
     "@types/node": "npm:^24.12.2"
     "@types/ws": "npm:^8.18.1"
     colorette: "npm:^2.0.20"
-    discord.js: "npm:^14.26.2"
-    prettier: "npm:^3.8.2"
+    discord.js: "npm:^14.26.3"
+    prettier: "npm:^3.8.3"
     tsc-watch: "npm:7.2.0"
     typescript: "npm:~5.4.5"
   languageName: unknown
