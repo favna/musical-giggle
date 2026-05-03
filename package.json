@@ -20,7 +20,7 @@
     "@sapphire/utilities": "^3.18.2",
     "@skyra/env-utilities": "^2.0.1",
     "colorette": "^2.0.20",
-    "discord.js": "^14.26.3"
+    "discord.js": "^14.26.4"
   },
   "devDependencies": {
     "@sapphire/prettier-config": "^2.0.0",
