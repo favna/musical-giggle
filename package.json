@@ -23,7 +23,7 @@
     "discord.js": "^14.28.0"
   },
   "devDependencies": {
-    "@sapphire/prettier-config": "^2.0.0",
+    "@sapphire/prettier-config": "^3.0.0",
     "@sapphire/ts-config": "^5.0.3",
     "@types/node": "^24.19.2",
     "@types/ws": "^8.18.2",
